@@ -1,0 +1,19 @@
+body {
+    line-height: 1.5 !important;
+}
+
+.elementor-widget-text-editor .elementor-widget-container>*:last-child {
+    margin: 0px;
+}
+
+.elementor-button-link {
+
+    .elementor-button-icon,
+    .elementor-button-text {
+        display: flex !important;
+    }
+
+    .elementor-button-content-wrapper {
+        align-items: center !important;
+    }
+}
