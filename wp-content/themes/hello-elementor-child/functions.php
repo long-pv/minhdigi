@@ -115,6 +115,8 @@ function disable_plugins_update($value)
 // include file function
 require CHILD_PATH . '/inc/ajax.php';
 require CHILD_PATH . '/inc/custom_theme.php';
+// vudevelop.php
+require CHILD_PATH . '/inc/vudevelop.php';
 
 // load widgets library
 function load_custom_widgets()
