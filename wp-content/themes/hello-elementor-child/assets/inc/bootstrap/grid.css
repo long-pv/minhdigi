@@ -40,7 +40,7 @@
 	.container-lg,
 	.container-md,
 	.container-sm {
-		max-width: calc(1400px + 120px);
+		max-width: calc(1200px + 120px);
 	}
 }
 
