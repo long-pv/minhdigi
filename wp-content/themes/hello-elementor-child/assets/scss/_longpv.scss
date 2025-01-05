@@ -1,0 +1,61 @@
+.form_dang_ky {
+    z-index: 10;
+    position: relative;
+
+    .row {
+        --bs-gutter-x: 60px;
+        --bs-gutter-y: 0px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+        height: 48px;
+        width: 100%;
+        border: none !important;
+        font-size: 18px;
+        font-family: "Be Vietnam Pro";
+        font-weight: 400;
+        color: #fff;
+        outline: none !important;
+        background: transparent;
+        padding: 8px 0px;
+        border-bottom: 1px solid rgba(#fff, 0.3) !important;
+        border-radius: 0px;
+
+        &::placeholder {
+            color: #E08892;
+        }
+
+        &:focus {
+            border-bottom: 1px solid #fff !important;
+        }
+    }
+
+    br {
+        display: none !important;
+    }
+
+    p {
+        margin: 0px;
+    }
+
+    .wpcf7-not-valid-tip {
+        color: #ff9595;
+        font-size: 12px;
+    }
+
+    .wpcf7-form-control-wrap {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .wpcf7-submit {
+        display: none !important;
+    }
+
+    &~.wpcf7-response-output {
+        color: #fff;
+        margin: 10px 0px !important;
+    }
+}
