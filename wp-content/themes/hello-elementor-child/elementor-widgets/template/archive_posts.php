@@ -45,25 +45,25 @@ class Archive_Posts_Widget extends \Elementor\Widget_Base
             ]
         );
 
-        $this->add_control(
-            'posts_per_page',
-            [
-                'label' => __('Number of Posts', 'child_theme'),
-                'type' => \Elementor\Controls_Manager::SELECT,
-                'options' => [
-                    10 => '10',
-                    15 => '15',
-                    20 => '20',
-                    25 => '25',
-                    30 => '30',
-                    35 => '35',
-                    40 => '40',
-                    45 => '45',
-                    50 => '50',
-                ],
-                'default' => '10',
-            ]
-        );
+        // $this->add_control(
+        //     'posts_per_page',
+        //     [
+        //         'label' => __('Number of Posts', 'child_theme'),
+        //         'type' => \Elementor\Controls_Manager::SELECT,
+        //         'options' => [
+        //             10 => '10',
+        //             15 => '15',
+        //             20 => '20',
+        //             25 => '25',
+        //             30 => '30',
+        //             35 => '35',
+        //             40 => '40',
+        //             45 => '45',
+        //             50 => '50',
+        //         ],
+        //         'default' => '10',
+        //     ]
+        // );
 
         $this->add_responsive_control(
             'columns',
@@ -121,7 +121,8 @@ class Archive_Posts_Widget extends \Elementor\Widget_Base
         $columns_mobile = $settings['columns_mobile'] ?? 1;
         $enable_pagination = $settings['enable_pagination'] === 'yes' ? true : false;
         $post_type = $settings['post_type'] ?? 'post';
-        $posts_per_page = $settings['posts_per_page'] ?? 10;
+        // $posts_per_page = $settings['posts_per_page'] ?? 10;
+        $posts_per_page = 9;
         $paging = !empty($_GET['paging']) ? intval($_GET['paging']) : 1;
 
         $query_args = [
