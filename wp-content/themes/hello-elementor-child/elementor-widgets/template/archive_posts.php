@@ -162,8 +162,7 @@ class Archive_Posts_Widget extends \Elementor\Widget_Base
                                 <?php echo get_the_post_thumbnail(get_the_ID(), 'large'); ?>
                             </a>
                         <?php endif; ?>
-
-                        <div class="block-3 row archive_post_item__inner">
+                        <div class="row archive_post_item__inner">
                             <div class="col-6">
                                 <div class="category">
                                     <?php
@@ -195,14 +194,14 @@ class Archive_Posts_Widget extends \Elementor\Widget_Base
                             </div>
                         </div>
                         <div class="archive_post_item__content" data-mh="archive_post_item__content">
-                            <a class="d-flex" href="<?php the_permalink(); ?>">
+                            <a class="d-flex archive_post_item__content-inner" href="<?php the_permalink(); ?>">
                                 <h3 class="archive_post_item__title line-2"><?php echo get_the_title(); ?></h3>
                             </a>
-                            <p class="line-3"><?php echo get_the_excerpt(); ?></p>
+                            <p class="archive_post_item__desc line-3"><?php echo get_the_excerpt(); ?></p>
                         </div>
                         <!--  -->
-                        <div class="archive_post_item__inner row">
-                            <div class="col-8">
+                        <div class="archive_post_item__footer row">
+                            <div class="col-7">
                                 <div class="author">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -214,7 +213,7 @@ class Archive_Posts_Widget extends \Elementor\Widget_Base
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-5">
                                 <div class="view-count">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -224,8 +223,9 @@ class Archive_Posts_Widget extends \Elementor\Widget_Base
                                             d="M2 12C3.6 7.903 7.336 5 12 5C16.664 5 20.4 7.903 22 12C20.4 16.097 16.664 19 12 19C7.336 19 3.6 16.097 2 12Z"
                                             stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <?php echo get_field('post_views_count') ?? 0;
-                                    ?>
+                                    <span class="count">
+                                        <?php echo get_field('post_views_count') ?? 0; ?>
+                                    </span>
                                 </div>
                             </div>
                         </div>

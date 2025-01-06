@@ -51,7 +51,7 @@ class Profile_Card_Widget extends \Elementor\Widget_Base
                     <div class="profile-card__info">
                         <div class="profile-card__inner-info">
                             <div class="profile-card__avatar">
-                                <?php if (isset($thong_tin_ket_noi['anh_dai_dien'])) {
+                                <?php if (!empty($thong_tin_ket_noi['anh_dai_dien'])) {
                                     // ID của ảnh
                                     $attachment_id = $thong_tin_ket_noi['anh_dai_dien'];
                                     // Lấy URL của ảnh
