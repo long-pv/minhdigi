@@ -69,39 +69,7 @@
 	margin-bottom: 21px;
 }
 
-//
-// .archive_post_item .category {
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	flex: 1; /* Chiếm tối đa không gian có thể */
-// 	white-space: nowrap;
-// 	overflow: hidden;
-// 	text-overflow: ellipsis;
-// 	//
-// 	background: #ffe7e7;
-// 	border: 1px solid #d98787;
-// 	border-radius: 19px;
-// 	padding: 6px 21px;
-// 	//
-// 	text-transform: uppercase;
-// 	font-family: Ubuntu;
-// 	font-size: 16px;
-// 	font-weight: 400;
-// 	color: #c11515;
-// 	//
-// 	overflow: hidden;
-// 	// overflow: hidden;
-// 	text-overflow: ellipsis;
-// }
-
 .archive_post_item .category {
-	// max-width: 100%; /* Đảm bảo không bị tràn */
-	// // white-space: nowrap; /* Không cho phép xuống dòng */
-	// overflow: hidden;
-	// overflow-wrap: break-word !important;
-	// text-overflow: ellipsis;
-	//
 	background: #ffe7e7;
 	border: 1px solid #d98787;
 	border-radius: 19px;
@@ -228,7 +196,7 @@
 
 	a,
 	.current {
-		color: #ffffff;
+		color: #ffffff !important;
 		font-size: 18px;
 		font-weight: 500;
 
@@ -240,12 +208,10 @@
 	a {
 		text-decoration: none;
 
-		// @include media-breakpoint-up(lg) {
-		// 	&:hover {
-		// 		// color: $secondary;
-		// 		text-decoration: underline;
-		// 	}
-		// }
+		&:hover {
+			color: #ffffff !important;
+			text-decoration: underline;
+		}
 	}
 
 	.icon {
@@ -267,6 +233,15 @@
 
 //
 // Detail Blog
+.related_news__heading {
+	font-family: Gabarito;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 24px;
+	color: #000000;
+	text-transform: uppercase;
+}
+
 .related_news_item__inner {
 	display: flex;
 	flex-direction: column;
@@ -277,8 +252,11 @@
 }
 
 .related_news_item {
-	display: flex;
-	gap: 18px;
+	// display: flex;
+	// gap: 18px;
+	&__row {
+		--bs-gutter-x: 17px;
+	}
 
 	&__image {
 		display: block;
@@ -317,16 +295,15 @@
 }
 
 //
-//
 .post-info {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
-	background-color: #fff;
-	padding: 10px 20px;
 	border-radius: 10px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 	gap: 18px;
+	// background-color: #fff;
+	// padding: 10px 20px;
+	// box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .post-info__inner {
@@ -354,6 +331,7 @@
 .post-meta {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	gap: 15px;
 }
 
@@ -361,8 +339,8 @@
 	display: flex;
 	align-items: center;
 	gap: 5px;
-	font-size: 14px;
-	color: #666;
+	font-size: 16px;
+	color: #6f6f6f;
 }
 
 .meta-item .icon {
@@ -373,7 +351,7 @@
 
 .social-links {
 	display: flex;
-	gap: 10px;
+	gap: 7px;
 }
 
 .social-link {
@@ -398,6 +376,7 @@
 
 .post-rating {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	gap: 20px;
 	border: 1px solid #e2e2e2;
@@ -408,6 +387,13 @@
 .rating-text {
 	font-size: 14px;
 	color: #666;
+}
+
+.rating-text strong {
+	color: #000000;
+	font-family: Be Vietnam;
+	font-size: 16px;
+	font-weight: 700;
 }
 
 .rating-stars {
@@ -536,12 +522,16 @@
 
 // Related Posts
 .related_blog_item {
-	display: flex;
+	// display: flex;
+	// gap: 21px;
 	background-color: #fff3f3;
-	padding: 20px 30px 20px 20px;
+	padding: 20px 32px 20px 20px;
 	border-radius: 10px;
-	gap: 21px;
 	margin-bottom: 20px;
+
+	&__row {
+		--bs-gutter-x: 21px;
+	}
 
 	&__image {
 		display: block;
