@@ -335,7 +335,7 @@
 }
 // End Detail Blog
 
-//
+// Start Post Info
 .post-info {
 	display: flex;
 	flex-wrap: wrap;
@@ -348,24 +348,32 @@
 		font-size: 16px;
 		font-weight: 500;
 		color: #6f6f6f;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.author-info {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+
+	.author-avatar {
+		width: 54px;
+		height: 54px;
+		border-radius: 50%;
+
+		img {
+			border-radius: 50%;
+			object-fit: cover;
+		}
 	}
 }
 
 .post-info__inner {
 	align-items: center;
-}
-
-.author-info {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-}
-
-.author-avatar {
-	width: 54px;
-	height: 54px;
-	border-radius: 50%;
-	object-fit: cover;
 }
 
 .post-meta {
@@ -378,40 +386,37 @@
 .meta-item {
 	display: flex;
 	align-items: center;
-	gap: 5px;
-	font-size: 16px;
-	color: #6f6f6f;
-}
+	gap: 7px;
 
-.meta-item .icon {
-	width: 20px;
-	height: 20px;
-	color: #999;
+	svg {
+		width: 24px;
+		height: 24px;
+		min-width: 24px;
+	}
+
+	span {
+		color: #6f6f6f;
+		font-family: "Be Vietnam Pro";
+		font-size: 16px;
+		font-weight: 400;
+	}
 }
 
 .social-links {
 	display: flex;
 	gap: 7px;
-}
 
-.social-link {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 36px;
-	height: 36px;
-	border: 1px solid #d42328;
-	border-radius: 16px;
-	font-size: 14px;
-	font-weight: bold;
-	// color: #e74c3c;
-	text-decoration: none;
-	transition: all 0.3s;
-}
+	.social-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-.social-link:hover {
-	background-color: #e74c3c;
-	color: #fff;
+		svg {
+			width: 36px;
+			height: 36px;
+			min-width: 36px;
+		}
+	}
 }
 
 .post-rating {
@@ -422,26 +427,35 @@
 	border: 1px solid #e2e2e2;
 	border-radius: 31px;
 	padding: 8px 20px;
+
+	.rating-text {
+		font-family: "Be Vietnam Pro";
+		font-size: 16px;
+		font-weight: 500;
+		color: #6f6f6f;
+	}
+
+	.rating-text strong {
+		font-family: "Be Vietnam Pro";
+		font-size: 16px;
+		font-weight: 700;
+		color: #000000;
+	}
+
+	.rating-stars {
+		display: flex;
+		gap: 4px;
+
+		svg {
+			width: 19px;
+			height: 18px;
+			min-width: 19px;
+		}
+	}
 }
+// End Post Info
 
-.rating-text {
-	font-size: 14px;
-	color: #666;
-}
-
-.rating-text strong {
-	color: #000000;
-	font-family: "Be Vietnam Pro";
-	font-size: 16px;
-	font-weight: 700;
-}
-
-// .rating-stars {
-// 	font-size: 18px;
-// 	color: #f39c12;
-// }
-
-// Profile Card
+// Start Profile Card
 .profile-card {
 	display: flex;
 	flex-wrap: wrap;
