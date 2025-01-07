@@ -460,117 +460,102 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 24px;
-	padding: 34px 24px 24px;
+	padding: 34px 24px 26px;
 	background-color: #fff0ed;
 	border-radius: 10px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 	border: 1px solid #daa3a3;
-}
 
-//
-.profile-card__inner {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-}
+	.profile-card__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
 
-//
-.profile-card__info {
-	display: flex;
-	align-items: center;
-	gap: 16px;
-}
+	.profile-card__info {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
 
-.profile-card__contact {
-	display: flex;
-	align-items: center;
-	gap: 24px;
-}
+	.profile-card__contact {
+		display: flex;
+		align-items: center;
+		gap: 24px;
+	}
 
-//
-.profile-card__avatar {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 72px;
-	height: 72px;
-	border: 1px dashed #bf2f2e;
-	border-radius: 50%;
-	padding: 7px;
-}
+	.profile-card__avatar {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 72px;
+		height: 72px;
+		border: 1px dashed #bf2f2e;
+		border-radius: 50%;
+		padding: 7px;
 
-// .profile-card__avatar img {
-// 	width: 80px;
-// 	height: 80px;
-// 	border-radius: 50%;
-// 	border: 2px dashed #e74c3c;
-// 	object-fit: cover;
-// }
+		img {
+			border-radius: 50%;
+			object-fit: cover;
+		}
+	}
 
-//
-.profile-card__infofull {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: 3px;
-}
+	.profile-card__infofull {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 3px;
+	}
 
-.profile-card__name {
-	font-family: "Be Vietnam Pro";
-	font-size: 20px;
-	font-weight: 500;
-	color: #000000;
-	text-transform: uppercase;
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
+	.profile-card__name {
+		font-family: "Be Vietnam Pro";
+		font-size: 20px;
+		font-weight: 500;
+		color: #000000;
+		text-transform: uppercase;
+		margin: 0px;
+	}
 
-.profile-card__role {
-	font-family: "Be Vietnam Pro";
-	font-size: 16px;
-	font-weight: 500;
-	color: #b94949;
-	margin-bottom: 0px;
-}
+	.profile-card__role {
+		font-family: "Be Vietnam Pro";
+		font-size: 16px;
+		font-weight: 500;
+		color: #b94949;
+		margin-bottom: 0px;
+	}
 
-//
-.profile-card__social-title {
-	font-family: "Be Vietnam Pro";
-	font-size: 16px;
-	font-weight: 600;
-	color: #000000;
-}
+	.profile-card__social-title {
+		font-family: "Be Vietnam Pro";
+		font-size: 16px;
+		font-weight: 600;
+		color: #000000;
+	}
 
-.profile-card__social-links {
-	display: flex;
-	gap: 10px;
-}
+	.profile-card__social-links {
+		display: flex;
+		gap: 7px;
+	}
 
-.profile-card__social-link {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 36px;
-	height: 36px;
-	border: 1px solid #d42328;
-	border-radius: 16px;
-	font-size: 14px;
-	font-weight: bold;
-	// color: #e74c3c;
-	text-decoration: none;
-	transition: all 0.3s;
-}
+	.profile-card__social-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-.profile-card__social-link:hover {
-	background-color: #e74c3c;
-	color: #fff;
-}
+		svg {
+			width: 36px;
+			height: 36px;
+			min-width: 36px;
+		}
+	}
 
-.profile-card__quote {
-	font-family: "Be Vietnam Pro";
-	font-size: 16px;
-	color: #000000;
+	.profile-card__quote {
+		font-family: "Be Vietnam Pro";
+		font-size: 16px;
+		font-weight: 400;
+		color: #000000;
+		margin: 0px;
+	}
 }
 // End Profile Card
 

@@ -104,6 +104,26 @@
                     "new_lines": ""
                 },
                 {
+                    "key": "field_677caa7c33cfc",
+                    "label": "Đoạn chỉ dẫn",
+                    "name": "doan_chi_dan",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_677be1585aae0",
                     "label": "Đường dẫn facebook",
                     "name": "duong_dan_facebook",
@@ -175,5 +195,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736172120
+    "modified": 1736223445
 }
