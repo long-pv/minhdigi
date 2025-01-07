@@ -27,11 +27,33 @@ class Author_Post_Widget extends \Elementor\Widget_Base
 
     protected function _register_controls()
     {
+        // Bắt đầu phần Content
         $this->start_controls_section(
             'content_section',
             [
                 'label' => __('Content', 'child_theme'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+        // Control chọn tác giả
+        $this->add_control(
+            'author',
+            [
+                'label' => __('Chọn Tác Giả', 'child_theme'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => $this->get_authors_list(),
+                'default' => '',
+            ]
+        );
+
+        // Control nhập số lượng bài viết
+        $this->add_control(
+            'post_count',
+            [
+                'label' => __('Số lượng bài viết', 'child_theme'),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'default' => 8,
             ]
         );
 
@@ -41,12 +63,99 @@ class Author_Post_Widget extends \Elementor\Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        ?>
-        <div class="duplicate_widget">
-            <button class="custom_button">Click me</button>
-            <div class="notification_desc d-none">Show content</div>
-        </div>
-        <?php
+        $author_id = $settings['author'];
+        $post_count = $settings['post_count'];
+
+        if (empty($author_id)) {
+            echo '<p>' . __('Vui lòng chọn một tác giả.', 'child_theme') . '</p>';
+            return;
+        }
+
+        // Lấy bài viết của tác giả
+        $query = new WP_Query([
+            'author' => $author_id,
+            'posts_per_page' => $post_count,
+            'orderby' => 'date', // Sắp xếp theo ngày đăng
+            'order' => 'DESC',
+
+        ]);
+
+        if ($query->have_posts()) {
+            echo '<div class="author-post-widget">';
+            echo '<h3>' . sprintf(__('Bài viết của %s', 'child_theme'), get_the_author_meta('display_name', $author_id)) . '</h3>';
+            echo '<ul>';
+            ?>
+            <div class="container">
+                <div class="row">
+                    <?php
+                    while ($query->have_posts()):
+                        $query->the_post(); ?>
+                        <div class="col-4">
+                            <div class="post_author_card" data-mh="post_author_card">
+                                <?php if (has_post_thumbnail()): ?>
+                                    <a href="<?php the_permalink(); ?>" class=" post_author_card__image">
+                                        <?php echo get_the_post_thumbnail(get_the_ID(), 'large'); ?>
+                                    </a>
+                                <?php endif; ?>
+                                <div class="post_author_card__content">
+                                    <a href="<?php the_permalink(); ?>" class="d-flex post_author_card__link">
+                                        <h3 class="post_author_card__title line-2">
+                                            <?php echo get_the_title(); ?>
+                                        </h3>
+                                    </a>
+                                    <div class="post_author_card__meta">
+                                        <div class="post_author_card__author">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M19 20.75C19.2652 20.75 19.5196 20.6446 19.7071 20.4571C19.8946 20.2696 20 20.0152 20 19.75V18.504C20.004 15.698 16.026 13.5 12 13.5C7.974 13.5 4 15.698 4 18.504V19.75C4 20.0152 4.10536 20.2696 4.29289 20.4571C4.48043 20.6446 4.73478 20.75 5 20.75H19ZM15.604 6.854C15.604 7.32728 15.5108 7.79593 15.3297 8.23319C15.1485 8.67045 14.8831 9.06775 14.5484 9.40241C14.2138 9.73707 13.8164 10.0025 13.3792 10.1837C12.9419 10.3648 12.4733 10.458 12 10.458C11.5267 10.458 11.0581 10.3648 10.6208 10.1837C10.1836 10.0025 9.78625 9.73707 9.45159 9.40241C9.11692 9.06775 8.85146 8.67045 8.67034 8.23319C8.48922 7.79593 8.396 7.32728 8.396 6.854C8.396 5.89816 8.77571 4.98147 9.45159 4.30559C10.1275 3.62971 11.0442 3.25 12 3.25C12.9558 3.25 13.8725 3.62971 14.5484 4.30559C15.2243 4.98147 15.604 5.89816 15.604 6.854Z"
+                                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="user-name">
+                                                <?php echo get_the_author_meta('nickname'); ?>
+                                            </span>
+                                        </div>
+                                        <div class="post_author_card__date">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_263_2373)">
+                                                    <path
+                                                        d="M5.673 0C5.85865 0 6.0367 0.0737498 6.16797 0.205025C6.29925 0.336301 6.373 0.514348 6.373 0.7V2.009H13.89V0.709C13.89 0.523348 13.9637 0.345301 14.095 0.214025C14.2263 0.0827498 14.4043 0.009 14.59 0.009C14.7757 0.009 14.9537 0.0827498 15.085 0.214025C15.2162 0.345301 15.29 0.523348 15.29 0.709V2.009H18C18.5303 2.009 19.0388 2.21958 19.4139 2.59443C19.7889 2.96929 19.9997 3.47774 20 4.008V18.001C19.9997 18.5313 19.7889 19.0397 19.4139 19.4146C19.0388 19.7894 18.5303 20 18 20H2C1.46974 20 0.961184 19.7894 0.58614 19.4146C0.211096 19.0397 0.00026513 18.5313 0 18.001L0 4.008C0.00026513 3.47774 0.211096 2.96929 0.58614 2.59443C0.961184 2.21958 1.46974 2.009 2 2.009H4.973V0.699C4.97327 0.513522 5.04713 0.335731 5.17838 0.204672C5.30963 0.0736123 5.48752 -1.89263e-07 5.673 0ZM1.4 7.742V18.001C1.4 18.0798 1.41552 18.1578 1.44567 18.2306C1.47583 18.3034 1.52002 18.3695 1.57574 18.4253C1.63145 18.481 1.69759 18.5252 1.77039 18.5553C1.84319 18.5855 1.92121 18.601 2 18.601H18C18.0788 18.601 18.1568 18.5855 18.2296 18.5553C18.3024 18.5252 18.3685 18.481 18.4243 18.4253C18.48 18.3695 18.5242 18.3034 18.5543 18.2306C18.5845 18.1578 18.6 18.0798 18.6 18.001V7.756L1.4 7.742ZM6.667 14.619V16.285H5V14.619H6.667ZM10.833 14.619V16.285H9.167V14.619H10.833ZM15 14.619V16.285H13.333V14.619H15ZM6.667 10.642V12.308H5V10.642H6.667ZM10.833 10.642V12.308H9.167V10.642H10.833ZM15 10.642V12.308H13.333V10.642H15ZM4.973 3.408H2C1.92121 3.408 1.84319 3.42352 1.77039 3.45367C1.69759 3.48382 1.63145 3.52802 1.57574 3.58374C1.52002 3.63945 1.47583 3.70559 1.44567 3.77839C1.41552 3.85119 1.4 3.92921 1.4 4.008V6.343L18.6 6.357V4.008C18.6 3.92921 18.5845 3.85119 18.5543 3.77839C18.5242 3.70559 18.48 3.63945 18.4243 3.58374C18.3685 3.52802 18.3024 3.48382 18.2296 3.45367C18.1568 3.42352 18.0788 3.408 18 3.408H15.29V4.337C15.29 4.52265 15.2162 4.7007 15.085 4.83197C14.9537 4.96325 14.7757 5.037 14.59 5.037C14.4043 5.037 14.2263 4.96325 14.095 4.83197C13.9637 4.7007 13.89 4.52265 13.89 4.337V3.408H6.373V4.328C6.373 4.51365 6.29925 4.6917 6.16797 4.82297C6.0367 4.95425 5.85865 5.028 5.673 5.028C5.48735 5.028 5.3093 4.95425 5.17803 4.82297C5.04675 4.6917 4.973 4.51365 4.973 4.328V3.408Z"
+                                                        fill="black" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_263_2373">
+                                                        <rect width="20" height="20" fill="white" />
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <span>
+                                                <?php echo get_the_date('d/m/Y'); ?>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    endwhile; ?>
+                </div>
+            </div>
+            <?php
+        }
+        wp_reset_postdata();
+    }
+
+    private function get_authors_list()
+    {
+        $authors = get_users(['who' => 'authors']);
+        $options = [];
+
+        foreach ($authors as $author) {
+            $options[$author->ID] = $author->display_name;
+        }
+
+        return $options;
     }
 }
 
