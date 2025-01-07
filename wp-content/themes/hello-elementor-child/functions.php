@@ -113,6 +113,7 @@ function disable_plugins_update($value)
 }
 
 // include file function
+require CHILD_PATH . '/inc/security.php';
 require CHILD_PATH . '/inc/ajax.php';
 require CHILD_PATH . '/inc/custom_theme.php';
 // vudevelop.php
