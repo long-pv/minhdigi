@@ -13,7 +13,8 @@ function register_custom_widgets($widgets_manager)
     require_once TEMPLATE_PATH . 'profile_card.php';
     require_once TEMPLATE_PATH . 'related_news.php';
     require_once TEMPLATE_PATH . 'related_post.php';
-    // post_info profile_card related_news
+    require_once TEMPLATE_PATH . 'author_post.php';
+    // post_info profile_card related_news author_post
 
 
     // Register widgets
@@ -25,8 +26,7 @@ function register_custom_widgets($widgets_manager)
     $widgets_manager->register(new \Profile_Card_Widget());
     $widgets_manager->register(new \Related_News_Widget());
     $widgets_manager->register(new \Related_Post_Widget());
-
-
+    $widgets_manager->register(new \Author_Post_Widget());
 }
 add_action('elementor/widgets/register', 'register_custom_widgets');
 
