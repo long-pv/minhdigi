@@ -213,18 +213,3 @@ add_filter('gettext', function ($translated_text, $text, $domain) {
 //     return $translated_text;
 // }, 10, 3);
 
-// add_action('wp_footer', function () {
-//     if (is_single() && have_comments()) { // Kiểm tra nếu đang trong bài viết và có bình luận
-//         $comment_count = get_comments_number(); // Lấy số lượng bình luận
-//         ?>
-//
-<script type="text/javascript">
-    //             jQuery(document).ready(function ($) {
-    //                 // Thêm thẻ ẩn chứa số lượng bình luận vào khối #comments
-    //                 $('#comments').append('<span id="comment-count" style="display: none;"><?php echo esc_js($comment_count); ?></span>');
-    //             });
-    //         </script>
-//
-<?php
-//     }
-// });

@@ -15,7 +15,7 @@
 	// Giới hạn trong khối #comments
 	const commentsBlock = $("#comments");
 	// số lượng comment
-	var commentCount = $("#comment-count").text();
+	// var commentCount = $("#comment-count").text();
 
 	// Thay đổi tiêu đề .title-comments
 	const titleComments = commentsBlock.find(".title-comments");
