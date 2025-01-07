@@ -1,3 +1,4 @@
+// Start Archive Post
 .archive_post_item {
 	background-color: #ffffff;
 	border-radius: 10px;
@@ -150,9 +151,9 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+// End Archive Post
 
-//
-// Pagination -- Phân Trang
+// Start Pagination
 .pagination_custom,
 .woocommerce-pagination {
 	display: flex;
@@ -206,12 +207,11 @@
 		display: none;
 	}
 }
+// End Pagination
 
-//
-// -------------- Breadcrumbs ------------------
+// Start Breadcrumbs
 .breadcrumbs {
 	position: relative;
-	// margin-bottom: 24px;
 
 	a,
 	.current {
@@ -249,23 +249,24 @@
 		}
 	}
 }
+// End Breadcrumbs
 
-//
-// Detail Blog
-.related_news__heading {
-	font-family: Gabarito;
+// Start Detail Blog
+.related_news .related_news__heading {
+	font-family: "Gabarito";
 	font-size: 20px;
 	font-weight: 600;
 	line-height: 24px;
 	color: #000000;
 	text-transform: uppercase;
+	margin: 0px;
 }
 
 .related_news_item__inner {
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
-	padding: 30px;
+	padding: 30px 22px 39px 30px;
 	border: 1px solid #dedede;
 	border-radius: 10px;
 }
@@ -299,11 +300,6 @@
 		}
 	}
 
-	&__title {
-		margin-top: 0px;
-		margin-bottom: 10px;
-	}
-
 	&__date {
 		.date {
 			display: flex;
@@ -313,6 +309,32 @@
 	}
 }
 
+.related_news_item .related_news_item__content .related_news_item__title {
+	font-family: "Be Vietnam Pro";
+	font-size: 16px;
+	font-weight: 600;
+	color: #676767;
+	margin: 0px;
+}
+
+.related_news_item .related_news_item__content .related_news_item__link {
+	margin-bottom: 8px;
+}
+
+.related_news_item .related_news_item__content .related_news_item__date .date {
+	font-family: "Be Vietnam Pro";
+	font-size: 16px;
+	font-weight: 400;
+	color: #6f6f6f;
+
+	svg {
+		width: 20px;
+		height: 20px;
+		min-width: 20px;
+	}
+}
+// End Detail Blog
+
 //
 .post-info {
 	display: flex;
@@ -320,9 +342,13 @@
 	flex-direction: column;
 	border-radius: 10px;
 	gap: 18px;
-	// background-color: #fff;
-	// padding: 10px 20px;
-	// box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+	.author-name {
+		font-family: "Be Vietnam Pro";
+		font-size: 16px;
+		font-weight: 500;
+		color: #6f6f6f;
+	}
 }
 
 .post-info__inner {
@@ -340,11 +366,6 @@
 	height: 54px;
 	border-radius: 50%;
 	object-fit: cover;
-}
-
-.author-name {
-	font-size: 16px;
-	color: #6f6f6f;
 }
 
 .post-meta {

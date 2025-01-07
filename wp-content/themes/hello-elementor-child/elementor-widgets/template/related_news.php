@@ -51,13 +51,13 @@ class Related_News_Widget extends \Elementor\Widget_Base
             'orderby' => 'date', // Sắp xếp theo ngày đăng
             'order' => 'DESC',
         );
-        //
+        // 
         $related_posts = new WP_Query($args);
         //
         if ($related_posts->have_posts()) {
             echo '<div class="related_news">';
-            echo '<h3 class="related_news__heading">Tin liên quan</h3>';
             echo '<div class="related_news_item__inner">';
+            echo '<h3 class="related_news__heading">Tin liên quan</h3>';
 
             while ($related_posts->have_posts()) {
                 $related_posts->the_post();
@@ -76,8 +76,8 @@ class Related_News_Widget extends \Elementor\Widget_Base
 
                         <div class="col-8">
                             <div class="related_news_item__content">
-                                <a class="d-flex" href="<?php the_permalink(); ?>">
-                                    <h5 class="related_news_item__title line-1"><?php echo get_the_title(); ?></h3>
+                                <a class="d-flex related_news_item__link" href="<?php the_permalink(); ?>">
+                                    <h5 class="related_news_item__title line-2"><?php echo get_the_title(); ?></h3>
                                 </a>
                                 <div class="related_news_item__date">
                                     <div class="date">
