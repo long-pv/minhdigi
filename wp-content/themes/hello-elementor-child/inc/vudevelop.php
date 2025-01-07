@@ -161,24 +161,11 @@ add_filter('comment_form_defaults', 'custom_remove_comment_form_notes');
 
 //
 // // Đổi từ "says:"
-add_filter('comment_author_says_text', function () {
-    return 'nói rằng:'; // Thay đổi từ "says" sang "nói rằng"
+add_filter('comment_author_says_text', function ($says_text) {
+    return 'Trả lời'; // Thay thế toàn bộ văn bản
 });
 
-//
-add_filter('gettext', function ($translated_text, $text, $domain) {
-    if ($text === 'One Response') {
-        $translated_text = 'Một bình luận'; // Thay đổi theo ý bạn
-    }
-    if ($text === '% Responses') {
-        $translated_text = '% bình luận'; // Thay đổi tiêu đề nhiều bình luận
-    }
-    // Kiểm tra chuỗi cần thay đổi
-    if ($text === 'says:') {
-        $translated_text = 'nói rằng:'; // Thay đổi sang chuỗi mong muốn
-    }
-    return $translated_text;
-}, 10, 3);
+
 
 // Đổi từ "Reply"
 add_filter('comment_reply_link', function ($link) {
@@ -194,3 +181,50 @@ add_filter('get_comment_date', function ($date) {
 add_filter('get_comment_time', function ($time) {
     return date_i18n('H:i', strtotime($time)); // Thay đổi định dạng giờ
 });
+
+// Đổi Edit thành "Chỉnh sửa"
+add_filter('gettext', function ($translated_text, $text, $domain) {
+    // Thay đổi "Edit" thành "Chỉnh sửa"
+    if ($domain === 'default' && $text === 'Edit') {
+        $translated_text = 'Chỉnh sửa';
+    }
+    return $translated_text;
+}, 10, 3);
+
+// add_filter('gettext', function ($translated_text, $text, $domain) {
+//     // Log các chuỗi văn bản vào file debug.log
+//     error_log("Text: $text | Domain: $domain");
+//     return $translated_text;
+// }, 10, 3);
+
+// add_filter('gettext', function ($translated_text, $text, $domain) {
+//     // Thay đổi văn bản cho tiêu đề bình luận
+//     if ($text === 'One Response') {
+//         $translated_text = 'Một bình luận';
+//     } elseif ($text === '% Responses') {
+//         $translated_text = '% Bình luận';
+//     }
+
+//     // Thay đổi văn bản "says"
+//     if ($text === 'says') {
+//         $translated_text = 'nói rằng';
+//     }
+
+//     return $translated_text;
+// }, 10, 3);
+
+// add_action('wp_footer', function () {
+//     if (is_single() && have_comments()) { // Kiểm tra nếu đang trong bài viết và có bình luận
+//         $comment_count = get_comments_number(); // Lấy số lượng bình luận
+//         ?>
+//
+<script type="text/javascript">
+    //             jQuery(document).ready(function ($) {
+    //                 // Thêm thẻ ẩn chứa số lượng bình luận vào khối #comments
+    //                 $('#comments').append('<span id="comment-count" style="display: none;"><?php echo esc_js($comment_count); ?></span>');
+    //             });
+    //         </script>
+//
+<?php
+//     }
+// });

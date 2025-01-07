@@ -12,5 +12,18 @@
 		$(".form_dang_ky .wpcf7-submit").trigger("click");
 	});
 	// vucoder --------------------
-	//
+	// Giới hạn trong khối #comments
+	const commentsBlock = $("#comments");
+	// số lượng comment
+	var commentCount = $("#comment-count").text();
+
+	// Thay đổi tiêu đề .title-comments
+	const titleComments = commentsBlock.find(".title-comments");
+	// const commentCount = commentsBlock.find(".comment-list > li").length; // Đếm số lượng bình luận
+	titleComments.text("bình luận");
+
+	// Thay đổi văn bản .says thành "nói rằng"
+	commentsBlock.find(".says").each(function () {
+		$(this).text("nói rằng:");
+	});
 })(jQuery, window);

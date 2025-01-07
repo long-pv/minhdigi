@@ -732,3 +732,16 @@
 .line-3 {
 	@include line-clamp(3);
 }
+
+// Start Comment
+#comments {
+	.title-comments {
+		margin: 0px;
+	}
+
+	.comment-list {
+		.comment-body {
+			border: none !important;
+		}
+	}
+}
