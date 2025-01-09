@@ -56,8 +56,8 @@ class Related_News_Widget extends \Elementor\Widget_Base
         //
         if ($related_posts->have_posts()) {
             echo '<div class="related_news">';
-            echo '<div class="related_news_item__inner">';
             echo '<h3 class="related_news__heading">Tin liên quan</h3>';
+            echo '<div class="related_news_item__inner">';
 
             while ($related_posts->have_posts()) {
                 $related_posts->the_post();

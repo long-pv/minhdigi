@@ -107,7 +107,7 @@ class Related_Post_Widget extends \Elementor\Widget_Base
                                             </div>
                                         </div>
                                         <a class="d-flex related_blog_item__inner_title" href="<?php the_permalink(); ?>">
-                                            <h3 class="related_blog_item__title"><?php echo get_the_title(); ?></h3>
+                                            <h4 class="related_blog_item__title"><?php echo get_the_title(); ?></h4>
                                         </a>
                                         <div class="related_blog_item__footer row">
                                             <div class="col-md-12 col-lg-7">
