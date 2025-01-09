@@ -49,7 +49,7 @@ class Post_Info_Widget extends \Elementor\Widget_Base
         ?>
         <div class="post-info">
             <div class="row post-info__inner">
-                <div class="col-5">
+                <div class="col-md-12 col-lg-5">
                     <div class="author-info">
                         <div class="author-avatar">
                             <?php echo get_avatar(get_the_author_meta('ID')); ?>
@@ -59,7 +59,7 @@ class Post_Info_Widget extends \Elementor\Widget_Base
                         </a>
                     </div>
                 </div>
-                <div class="col-7">
+                <div class="col-md-12 col-lg-7">
                     <div class="post-meta">
                         <div class="meta-item">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +93,7 @@ class Post_Info_Widget extends \Elementor\Widget_Base
                 </div>
             </div>
             <div class="row post-info__inner">
-                <div class="col-4">
+                <div class="col-md-4 col-lg-4">
                     <div class="social-links">
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_link; ?>"
                             onclick="window.open(this.href, this.target, 'width=500,height=500'); return false;"
@@ -127,10 +127,11 @@ class Post_Info_Widget extends \Elementor\Widget_Base
                         </a>
                     </div>
                 </div>
-                <div class="col-8">
+                <div class="col-md-12 col-lg-8">
                     <div class="post-rating">
                         <span class="rating-text"><strong>Đánh giá:</strong> 5/5 (<?php echo get_comments_number(); ?> Bình
                             chọn)</span>
+
                         <div class="rating-stars">
                             <?php for ($i = 0; $i < 5; $i++): ?>
                                 <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">

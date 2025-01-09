@@ -374,6 +374,12 @@
 
 .post-info__inner {
 	align-items: center;
+
+	@media (max-width: 1023px) {
+		gap: 16px;
+		align-items: start;
+		flex-direction: column;
+	}
 }
 
 .post-meta {
@@ -427,6 +433,12 @@
 	border: 1px solid #e2e2e2;
 	border-radius: 31px;
 	padding: 8px 20px;
+
+	@media (max-width: 1023px) {
+		gap: 8px;
+		align-items: start;
+		flex-direction: column;
+	}
 
 	.rating-text {
 		font-family: "Be Vietnam Pro";
@@ -581,8 +593,17 @@
 		border-radius: 10px;
 		margin-bottom: 20px;
 
+		@media (max-width: 1023px) {
+			padding: 20px;
+		}
+
 		&__row {
 			--bs-gutter-x: 21px;
+
+			@media (max-width: 1023px) {
+				flex-direction: column;
+				gap: 16px;
+			}
 		}
 
 		&__image {
@@ -629,15 +650,22 @@
 	}
 	// End Related Posts
 
-	//
 	.related_blog_item .related_blog_item__inner {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 21px;
+
+		//
+		@media (max-width: 1023px) {
+			flex-direction: column;
+			justify-content: center;
+			align-items: start;
+			gap: 8px;
+			margin-bottom: 16px;
+		}
 	}
 
-	//
 	.related_blog_item .related_blog_item__inner .category {
 		border-radius: 19px;
 		border: 1px solid #d98787;
@@ -672,13 +700,18 @@
 		}
 	}
 
-	//
-
-	//
 	.related_blog_item .related_blog_item__footer {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		//
+		@media (max-width: 1023px) {
+			flex-direction: column;
+			justify-content: center;
+			align-items: start;
+			gap: 8px;
+		}
 	}
 
 	.related_blog_item .related_blog_item__footer .view-count,
@@ -700,11 +733,14 @@
 
 	.related_blog_item .related_blog_item__footer .view-count {
 		justify-content: end;
+
+		@media (max-width: 1023px) {
+			justify-content: start;
+		}
 	}
 
 	.related_blog_item .count,
 	.related_blog_item .user-name {
-		// flex: 1; /* Chiếm tối đa không gian có thể */
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -807,9 +843,9 @@
 
 			.post_author_card__date {
 				svg {
-					width: 20px;
-					height: 20px;
-					min-width: 20px;
+					width: 24px;
+					height: 24px;
+					min-width: 24px;
 				}
 			}
 		}

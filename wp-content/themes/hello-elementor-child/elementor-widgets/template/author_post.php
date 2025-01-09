@@ -90,7 +90,7 @@ class Author_Post_Widget extends \Elementor\Widget_Base
                     <?php
                     while ($query->have_posts()):
                         $query->the_post(); ?>
-                        <div class="col-4">
+                        <div class="col-3">
                             <div class="post_author_card" data-mh="post_author_card">
                                 <?php if (has_post_thumbnail()): ?>
                                     <a href="<?php the_permalink(); ?>" class=" post_author_card__image">

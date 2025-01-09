@@ -66,7 +66,7 @@ class Related_Post_Widget extends \Elementor\Widget_Base
                         $query->the_post(); ?>
                         <article class="related_blog_item" data-mh="related_blog_item">
                             <div class="related_blog_item__row row">
-                                <div class="col-5">
+                                <div class="col-md-12 col-lg-5">
                                     <?php if (has_post_thumbnail()): ?>
                                         <div class="related_blog_item__image">
                                             <a class="d-block related_blog_item__img" href="<?php the_permalink(); ?>">
@@ -75,7 +75,7 @@ class Related_Post_Widget extends \Elementor\Widget_Base
                                         </div>
                                     <?php endif; ?>
                                 </div>
-                                <div class="col-7">
+                                <div class="col-md-12 col-lg-7">
                                     <div class="related_blog_item__content">
                                         <div class="related_blog_item__inner">
                                             <div class="category">
@@ -110,7 +110,7 @@ class Related_Post_Widget extends \Elementor\Widget_Base
                                             <h3 class="related_blog_item__title"><?php echo get_the_title(); ?></h3>
                                         </a>
                                         <div class="related_blog_item__footer row">
-                                            <div class="col-7">
+                                            <div class="col-md-12 col-lg-7">
                                                 <div class="author">
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -124,7 +124,7 @@ class Related_Post_Widget extends \Elementor\Widget_Base
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-5">
+                                            <div class="col-md-12 col-lg-5">
                                                 <div class="view-count">
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
