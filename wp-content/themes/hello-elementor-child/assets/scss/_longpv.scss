@@ -3,8 +3,11 @@
     position: relative;
 
     .row {
-        --bs-gutter-x: 60px;
         --bs-gutter-y: 0px;
+
+        @media (min-width: 1024px) {
+            --bs-gutter-x: 60px;
+        }
     }
 
     input[type="text"],
