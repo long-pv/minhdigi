@@ -14,6 +14,7 @@ function register_custom_widgets($widgets_manager)
     require_once TEMPLATE_PATH . 'related_news.php';
     require_once TEMPLATE_PATH . 'related_post.php';
     require_once TEMPLATE_PATH . 'author_post.php';
+    require_once TEMPLATE_PATH . 'Timeline.php';
     // post_info profile_card related_news author_post
 
 
@@ -27,6 +28,7 @@ function register_custom_widgets($widgets_manager)
     $widgets_manager->register(new \Related_News_Widget());
     $widgets_manager->register(new \Related_Post_Widget());
     $widgets_manager->register(new \Author_Post_Widget());
+    $widgets_manager->register(new \Elementor_Timeline_Widget());
 }
 add_action('elementor/widgets/register', 'register_custom_widgets');
 
