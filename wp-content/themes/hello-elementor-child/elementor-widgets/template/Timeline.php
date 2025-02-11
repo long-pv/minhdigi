@@ -84,7 +84,7 @@ class Elementor_Timeline_Widget extends \Elementor\Widget_Base
                                 </span>
                             </div>
                         </div>
-                        <div class="col-6 timeline_content_block <?php echo ($index % 2 == 0) ? 'order-lg-2' : 'order-lg-1'; ?>">
+                        <div class="col-12 col-lg-6 timeline_content_block <?php echo ($index % 2 == 0) ? 'order-lg-2 order-2' : 'order-lg-1 order-2'; ?>">
                             <div class="timeline_content">
                                 <?php if (!empty($item['events'])) : ?>
                                     <div class="timeline_events">
@@ -93,7 +93,7 @@ class Elementor_Timeline_Widget extends \Elementor\Widget_Base
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <div class="col-6 timeline_image_block <?php echo ($index % 2 == 0) ? 'order-lg-1' : 'order-lg-2'; ?>">
+                        <div class="col-12 col-lg-6 timeline_image_block <?php echo ($index % 2 == 0) ? 'order-lg-1 order-1' : 'order-lg-2 order-1'; ?>">
                             <div class="timeline_image">
                                 <?php if (!empty($item['image']['url'])) : ?>
                                     <img src="<?php echo esc_url($item['image']['url']); ?>" alt="<?php echo esc_attr($item['year']); ?>">

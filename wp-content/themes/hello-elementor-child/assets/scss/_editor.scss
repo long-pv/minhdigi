@@ -1,4 +1,8 @@
-.editor {
+.editor,
+.editor>.elementor-widget-container {
+    line-height: 2 !important;
+    color: #000000;
+
     &>* {
         &:last-child {
             margin-bottom: 0px;

@@ -46,15 +46,24 @@ class Post_Info_Widget extends \Elementor\Widget_Base
         $post_id = get_the_ID();
         set_post_views($post_id);
         $post_views = get_field('post_views_count', $post_id);
-        ?>
+?>
         <div class="post-info">
             <div class="row post-info__inner">
                 <div class="col-md-12 col-lg-5">
                     <div class="author-info">
-                        <div class="author-avatar">
-                            <?php echo get_avatar(get_the_author_meta('ID')); ?>
+                        <div class="author-avatar single_post_author_avatar">
+                            <?php
+                            $user_id = get_the_author_meta('ID');
+                            $avatar = get_user_meta($user_id, 'avatar', true);
+                            if ($avatar) {
+                                echo '<img alt="" src="' . wp_get_attachment_url($avatar) . '" class="avatar avatar-96 photo" height="96" width="96" decoding="async">';
+                            }
+                            ?>
                         </div>
-                        <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" class="author-name">
+                        <?php
+                        $link_page_author = get_user_meta($user_id, 'link_page_author', true);
+                        ?>
+                        <a href="<?php echo $link_page_author ?: 'javascript:void(0);'; ?>" class="author-name">
                             <?php echo get_the_author_meta('nickname'); ?>
                         </a>
                     </div>
@@ -145,6 +154,6 @@ class Post_Info_Widget extends \Elementor\Widget_Base
                 </div>
             </div>
         </div>
-        <?php
+<?php
     }
 }

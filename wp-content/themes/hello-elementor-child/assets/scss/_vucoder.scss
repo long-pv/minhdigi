@@ -971,6 +971,10 @@
 			font-weight: 600;
 			margin: 0px;
 			line-height: 30px;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 
 		.post_author_card__meta {
@@ -1025,4 +1029,11 @@
 	font-size: 16px;
 	font-weight: 500;
 	font-family: "Be Vietnam Pro";
+}
+
+.single_post_author_avatar img {
+	width: 54px !important;
+	height: 54px !important;
+	object-fit: cover !important;
+	border-radius: 50% !important;
 }
