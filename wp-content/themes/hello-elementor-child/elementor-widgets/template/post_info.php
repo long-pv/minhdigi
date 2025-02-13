@@ -49,7 +49,7 @@ class Post_Info_Widget extends \Elementor\Widget_Base
 ?>
         <div class="post-info">
             <div class="row post-info__inner">
-                <div class="col-md-12 col-lg-5">
+                <div class="col-12 col-lg-6">
                     <div class="author-info">
                         <div class="author-avatar single_post_author_avatar">
                             <?php
@@ -68,7 +68,7 @@ class Post_Info_Widget extends \Elementor\Widget_Base
                         </a>
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-7">
+                <div class="col-12 col-lg-6">
                     <div class="post-meta">
                         <div class="meta-item">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -102,7 +102,7 @@ class Post_Info_Widget extends \Elementor\Widget_Base
                 </div>
             </div>
             <div class="row post-info__inner">
-                <div class="col-md-4 col-lg-4">
+                <div class="col-md-4 col-lg-5">
                     <div class="social-links">
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $share_link; ?>"
                             onclick="window.open(this.href, this.target, 'width=500,height=500'); return false;"
@@ -136,7 +136,7 @@ class Post_Info_Widget extends \Elementor\Widget_Base
                         </a>
                     </div>
                 </div>
-                <div class="col-md-12 col-lg-8">
+                <div class="col-md-12 col-lg-7">
                     <div class="post-rating">
                         <span class="rating-text"><strong>Đánh giá:</strong> 5/5 (<?php echo get_comments_number(); ?> Bình
                             chọn)</span>

@@ -1,12 +1,49 @@
 .editor,
 .editor>.elementor-widget-container {
-    line-height: 2 !important;
+    line-height: calc(32 / 18) !important;
     color: #000000;
+    font-size: 18px;
+    text-align: justify;
+    font-family: "Be Vietnam Pro", Sans-serif !important;
+    width: 100%;
 
     &>* {
         &:last-child {
             margin-bottom: 0px;
         }
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 700 !important;
+        line-height: calc(40 / 32) !important;
+    }
+
+    h2 {
+        font-size: 32px !important;
+
+        @media (max-width: 1024px) {
+            font-size: 28px !important;
+        }
+    }
+
+    h3 {
+        font-size: 24px !important;
+    }
+
+    h4 {
+        font-size: 22px !important;
+    }
+
+    h5 {
+        font-size: 20px !important;
+    }
+
+    h6 {
+        font-size: 18px !important;
     }
 
     a {

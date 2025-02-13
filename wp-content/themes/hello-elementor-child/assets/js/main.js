@@ -26,4 +26,16 @@
 	commentsBlock.find(".says").each(function () {
 		$(this).text("nói rằng:");
 	});
+
+	$("#sticky-navigator").stickyNavigator({
+		wrapselector: ".editor_block .elementor-widget-container",
+		targetselector: "h2,h3",
+	});
+
+	$("#sticky-navigator").on("click", ".nav-h2", function () {
+		$("#sticky-navigator .nav-h2").removeClass("active");
+		$(this).addClass("active");
+		$("#sticky-navigator .nav-h3").hide();
+		$(this).nextUntil(".nav-h2", ".nav-h3").show();
+	});
 })(jQuery, window);

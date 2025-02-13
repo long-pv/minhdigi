@@ -393,3 +393,64 @@
         }
     }
 }
+
+.single_post_toc_title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    font-family: "Gabarito" !important;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #000;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+
+#sticky-navigator ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+#sticky-navigator a {
+    color: #676767 !important;
+    text-decoration: none !important;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Be Vietnam Pro", Sans-serif !important;
+}
+
+#sticky-navigator ul li {
+    list-style: none;
+    padding: 4px 0px;
+}
+
+#sticky-navigator ul li.nav-h2 {
+    padding: 4px 0px;
+
+    &:not(.active) {
+        &~.nav-h3 {
+            display: none;
+        }
+    }
+
+    &.active {
+        a {
+            color: #C0302D !important;
+        }
+
+        &~.nav-h3 {
+            display: block;
+        }
+    }
+}
+
+#sticky-navigator ul li.nav-h3 {
+    padding-left: 16px;
+    border-left: 1px solid #C0302D;
+    display: none;
+}
+
+.single_post_toc_block {
+    width: 100%;
+    background-color: #fff;
+}

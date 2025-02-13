@@ -3,7 +3,7 @@ define('CHILD_URI', get_stylesheet_directory_uri());
 define('CHILD_PATH', get_stylesheet_directory());
 define('TEMPLATE_PATH', CHILD_PATH . '/elementor-widgets/template/');
 if (!defined('_S_VERSION')) {
-    define('_S_VERSION', '1.0.01');
+    define('_S_VERSION', '1.0.05');
 }
 
 // turn off auto update core wp
@@ -25,6 +25,9 @@ function child_theme_scripts()
 
     // matchHeight
     wp_enqueue_script('child_theme-script-matchHeight', CHILD_URI . '/assets/inc/matchHeight/jquery.matchHeight.js', array('jquery'), _S_VERSION, true);
+
+    // toc plus
+    wp_enqueue_script('child_theme-script-toc_plus', CHILD_URI . '/assets/js/jquery-stickyNavigator.js', array('jquery'), _S_VERSION, true);
 
     // add custom main css/js
     wp_enqueue_style('child_theme-style-main', CHILD_URI . '/assets/css/main.css', array(), _S_VERSION);
