@@ -417,6 +417,11 @@
     font-size: 16px;
     font-weight: 500;
     font-family: "Be Vietnam Pro", Sans-serif !important;
+    transition: all 0.3s;
+
+    &:hover {
+        color: #C0302D !important;
+    }
 }
 
 #sticky-navigator ul li {
