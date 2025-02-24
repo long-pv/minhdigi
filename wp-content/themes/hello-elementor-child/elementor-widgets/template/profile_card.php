@@ -45,7 +45,7 @@ class Profile_Card_Widget extends \Elementor\Widget_Base
         $thong_tin_ket_noi = get_field('thong_tin_ket_noi', 'option') ?? null;
         //
         if ($thong_tin_ket_noi) {
-            ?>
+?>
             <div class="profile-card">
                 <div class="profile-card__inner">
                     <div class="profile-card__info">
@@ -65,13 +65,20 @@ class Profile_Card_Widget extends \Elementor\Widget_Base
                             </div>
                         </div>
                         <div class="profile-card__infofull">
-                            <h2 class="profile-card__name"><?php if (isset($thong_tin_ket_noi['ten'])) {
-                                echo $thong_tin_ket_noi['ten'];
-                            } ?>
-                            </h2>
-                            <p class="profile-card__role"><?php if (isset($thong_tin_ket_noi['ten_cong_ty'])) {
-                                echo $thong_tin_ket_noi['ten_cong_ty'];
-                            } ?></p>
+                            <a class="profile_card_link_author" href="<?php echo $thong_tin_ket_noi['link_tac_gia'] ?? 'javascript:void(0);'; ?>">
+                                <h2 class="profile-card__name">
+                                    <?php
+                                    if (isset($thong_tin_ket_noi['ten'])) {
+                                        echo $thong_tin_ket_noi['ten'];
+                                    }
+                                    ?>
+                                </h2>
+                            </a>
+                            <p class="profile-card__role">
+                                <?php if (isset($thong_tin_ket_noi['ten_cong_ty'])) {
+                                    echo $thong_tin_ket_noi['ten_cong_ty'];
+                                } ?>
+                            </p>
                         </div>
                     </div>
 
@@ -83,8 +90,8 @@ class Profile_Card_Widget extends \Elementor\Widget_Base
                         </div>
                         <div class="profile-card__social-links">
                             <a href="<?php if (isset($thong_tin_ket_noi['duong_dan_facebook'])) {
-                                echo $thong_tin_ket_noi['duong_dan_facebook'];
-                            } ?>" target="_blank" class="profile-card__social-link">
+                                            echo $thong_tin_ket_noi['duong_dan_facebook'];
+                                        } ?>" target="_blank" class="profile-card__social-link">
                                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect x="0.5" y="0.5" width="35" height="35" rx="15.5" stroke="#D42328"></rect>
                                     <path
@@ -93,8 +100,8 @@ class Profile_Card_Widget extends \Elementor\Widget_Base
                                 </svg>
                             </a>
                             <a href="<?php if (isset($thong_tin_ket_noi['duong_dan_instagram'])) {
-                                echo $thong_tin_ket_noi['duong_dan_instagram'];
-                            } ?>" target="_blank" class="profile-card__social-link">
+                                            echo $thong_tin_ket_noi['duong_dan_instagram'];
+                                        } ?>" target="_blank" class="profile-card__social-link">
                                 <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect x="0.700195" y="0.5" width="35" height="35" rx="15.5" stroke="#D42328" />
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -103,8 +110,8 @@ class Profile_Card_Widget extends \Elementor\Widget_Base
                                 </svg>
                             </a>
                             <a href="<?php if (isset($thong_tin_ket_noi['duong_dan_youtube'])) {
-                                echo $thong_tin_ket_noi['duong_dan_youtube'];
-                            } ?>" target="_blank" class="profile-card__social-link">
+                                            echo $thong_tin_ket_noi['duong_dan_youtube'];
+                                        } ?>" target="_blank" class="profile-card__social-link">
                                 <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect x="1.18018" y="0.5" width="35" height="35" rx="15.5" stroke="#D42328"></rect>
                                     <path
@@ -119,10 +126,9 @@ class Profile_Card_Widget extends \Elementor\Widget_Base
                     <p class="profile-card__quote">
                         <?php echo $thong_tin_ket_noi['mo_ta']; ?>
                     <?php endif; ?>
-                </p>
+                    </p>
             </div>
-            <?php
+<?php
         }
     }
 }
-

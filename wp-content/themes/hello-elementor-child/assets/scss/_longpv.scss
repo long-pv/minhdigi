@@ -459,3 +459,12 @@
     width: 100%;
     background-color: #fff;
 }
+
+.profile_card_link_author {
+    display: flex;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
