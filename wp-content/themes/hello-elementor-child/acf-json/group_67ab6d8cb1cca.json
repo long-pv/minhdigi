@@ -43,6 +43,26 @@
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_67bdd3036abe5",
+            "label": "Mô tả ngắn",
+            "name": "mo_ta_ngan",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -63,5 +83,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739288119
+    "modified": 1740493592
 }

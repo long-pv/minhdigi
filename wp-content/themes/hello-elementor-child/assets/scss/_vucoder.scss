@@ -1031,6 +1031,14 @@
 	font-family: "Be Vietnam Pro";
 }
 
+.post_author_user_name {
+	color: #6F6F6F !important;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
 .single_post_author_avatar img {
 	width: 54px !important;
 	height: 54px !important;

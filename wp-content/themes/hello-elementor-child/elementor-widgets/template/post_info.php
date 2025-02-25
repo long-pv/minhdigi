@@ -58,14 +58,31 @@ class Post_Info_Widget extends \Elementor\Widget_Base
                             if ($avatar) {
                                 echo '<img alt="" src="' . wp_get_attachment_url($avatar) . '" class="avatar avatar-96 photo" height="96" width="96" decoding="async">';
                             }
+                            $nick_name = get_the_author_meta('nickname');
                             ?>
                         </div>
                         <?php
+                        $mo_ta_ngan = get_user_meta($user_id, 'mo_ta_ngan', true) ?? '';
                         $link_page_author = get_user_meta($user_id, 'link_page_author', true);
                         ?>
-                        <a href="<?php echo $link_page_author ?: 'javascript:void(0);'; ?>" class="author-name">
-                            <?php echo get_the_author_meta('nickname'); ?>
-                        </a>
+                        <div class="single_post_author_name">
+                            <a href="<?php echo $link_page_author ?: 'javascript:void(0);'; ?>" class="author-name">
+                                <?php echo $nick_name; ?>
+                            </a>
+                            <div class="single_post_author_mini">
+                                <div class="single_post_author_mimi_top">
+                                    <div class="single_post_author_mimi_img">
+                                        <img src="<?php echo wp_get_attachment_url($avatar); ?>" alt=" <?php echo $nick_name; ?>">
+                                    </div>
+                                    <div class="single_post_author_mimi_name">
+                                        <?php echo $nick_name; ?>
+                                    </div>
+                                </div>
+                                <div class="single_post_author_mimi_bottom">
+                                    <?php echo $mo_ta_ngan; ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6">

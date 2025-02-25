@@ -45,26 +45,6 @@ class Archive_Posts_Widget extends \Elementor\Widget_Base
             ]
         );
 
-        // $this->add_control(
-        //     'posts_per_page',
-        //     [
-        //         'label' => __('Number of Posts', 'child_theme'),
-        //         'type' => \Elementor\Controls_Manager::SELECT,
-        //         'options' => [
-        //             10 => '10',
-        //             15 => '15',
-        //             20 => '20',
-        //             25 => '25',
-        //             30 => '30',
-        //             35 => '35',
-        //             40 => '40',
-        //             45 => '45',
-        //             50 => '50',
-        //         ],
-        //         'default' => '10',
-        //     ]
-        // );
-
         $this->add_responsive_control(
             'columns',
             [
@@ -154,7 +134,7 @@ class Archive_Posts_Widget extends \Elementor\Widget_Base
 
             while ($query_post->have_posts()):
                 $query_post->the_post();
-                ?>
+?>
                 <div class="<?php echo esc_attr($col_class); ?>">
                     <article class="archive_post_item" data-mh="archive_post_item">
                         <?php if (has_post_thumbnail()): ?>
@@ -208,9 +188,13 @@ class Archive_Posts_Widget extends \Elementor\Widget_Base
                                             d="M19 20.75C19.2652 20.75 19.5196 20.6446 19.7071 20.4571C19.8946 20.2696 20 20.0152 20 19.75V18.504C20.004 15.698 16.026 13.5 12 13.5C7.974 13.5 4 15.698 4 18.504V19.75C4 20.0152 4.10536 20.2696 4.29289 20.4571C4.48043 20.6446 4.73478 20.75 5 20.75H19ZM15.604 6.854C15.604 7.32728 15.5108 7.79593 15.3297 8.23319C15.1485 8.67045 14.8831 9.06775 14.5484 9.40241C14.2138 9.73707 13.8164 10.0025 13.3792 10.1837C12.9419 10.3648 12.4733 10.458 12 10.458C11.5267 10.458 11.0581 10.3648 10.6208 10.1837C10.1836 10.0025 9.78625 9.73707 9.45159 9.40241C9.11692 9.06775 8.85146 8.67045 8.67034 8.23319C8.48922 7.79593 8.396 7.32728 8.396 6.854C8.396 5.89816 8.77571 4.98147 9.45159 4.30559C10.1275 3.62971 11.0442 3.25 12 3.25C12.9558 3.25 13.8725 3.62971 14.5484 4.30559C15.2243 4.98147 15.604 5.89816 15.604 6.854Z"
                                             stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <div class="user-name">
+                                    <?php
+                                    $user_id = get_the_author_meta('ID');
+                                    $link_page_author = get_user_meta($user_id, 'link_page_author', true);
+                                    ?>
+                                    <a href="<?php echo $link_page_author ?: 'javascript:void(0);'; ?>" class="user-name loop_post_author_name">
                                         <?php echo get_the_author_meta('nickname'); ?>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                             <div class="col-5">
@@ -231,7 +215,7 @@ class Archive_Posts_Widget extends \Elementor\Widget_Base
                         </div>
                     </article>
                 </div>
-                <?php
+<?php
             endwhile;
             echo '</div>'; // Close .row
             echo '</div>';
