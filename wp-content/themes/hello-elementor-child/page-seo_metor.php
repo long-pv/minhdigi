@@ -18,6 +18,7 @@ get_header();
 
 <!--  -->
 <div class="about_page">
+
     <!-- Banner Start -->
     <?php
     $banner = get_field('banner') ?? '';
@@ -87,8 +88,8 @@ get_header();
     $contact_form = get_field('contact_form') ?? '';
 
     // Kiểm tra tồn tại và gán giá trị
-    $title = isset($contact_form['title']) ? $contact_form['title'] : '';
-    $content = isset($contact_form['content']) ? $contact_form['content'] : '';
+    $title_form = isset($contact_form['title']) ? $contact_form['title'] : '';
+    $content_form = isset($contact_form['content']) ? $contact_form['content'] : '';
     $contact_form = isset($contact_form['contact_form']) ? $contact_form['contact_form'] : '';
     ?>
 
@@ -97,12 +98,12 @@ get_header();
             <div class="row contact_form__row">
                 <div class="col-lg-10">
                     <div class="contact_form">
-                        <?php if (!empty($title)): ?>
-                            <h2 class="contact_form__title"><?php echo esc_html($title); ?></h2>
+                        <?php if (!empty($title_form)): ?>
+                            <h2 class="contact_form__title"><?php echo esc_html($title_form); ?></h2>
                         <?php endif; ?>
 
-                        <?php if (!empty($content)): ?>
-                            <div class="contact_form__desc editor"><?php echo wp_kses_post($content); ?></div>
+                        <?php if (!empty($content_form)): ?>
+                            <div class="contact_form__desc editor"><?php echo wp_kses_post($content_form); ?></div>
                         <?php endif; ?>
 
                         <!-- Form -->
@@ -131,7 +132,7 @@ get_header();
     <section class="section__space">
         <div class="learn">
             <div class="container">
-                <div class="row">
+                <div class="row learn__row">
                     <div class="col-lg-6">
                         <?php if (!empty($title)): ?>
                             <div class="learn__title">
@@ -192,7 +193,7 @@ get_header();
                 <?php endif; ?>
 
                 <?php if (!empty($list_cus)): ?>
-                    <div class="row">
+                    <div class="row customer__row">
                         <?php foreach ($list_cus as $item): ?>         <?php
                                       $img = isset($item['image']) ? $item['image'] : [];
                                       $position = isset($item['position']) ? $item['position'] : '';
@@ -253,82 +254,78 @@ get_header();
                 </div>
 
                 <div class="why_choose_us__content">
-                    <?php foreach ($list_contents as $index => $item): ?>     <?php
-                                $number = str_pad($index + 1, 2, '0', STR_PAD_LEFT);
-                                $title = $item['title'] ?? '';
-                                $content = $item['content'] ?? '';
-                                $image = isset($item['image']) && is_array($item['image']) ? $item['image'] : null;
-                                ?>
+                    <?php foreach ($list_contents as $index => $item): ?>
+                        <?php
+                        $number = str_pad($index + 1, 2, '0', STR_PAD_LEFT);
+                        $title = $item['title'] ?? '';
+                        $content = $item['content'] ?? '';
+                        $image = isset($item['image']) && is_array($item['image']) ? $item['image'] : null;
 
-                        <?php if ($index % 2 == 0): ?>
-                            <!-- Giao diện 1: Index chẵn (0, 2, 4, ...) -->
-                            <div class="feature">
-                                <div class="row feature__row">
-                                    <div class="col-lg-7">
-                                        <div class="feature__content">
-                                            <div class="feature__number">
-                                                <?php echo esc_html($number); ?>
-                                            </div>
-                                            <div class="feature__text">
-                                                <?php if (!empty($title)): ?>
-                                                    <h3 class="feature__title"><?php echo esc_html($title); ?>
-                                                    </h3>
-                                                <?php endif; ?>
-                                                <?php if (!empty($content)): ?>
-                                                    <div class="feature__desc">
-                                                        <?php echo wp_kses_post($content); ?>
-                                                    </div>
-                                                <?php endif; ?>
-                                            </div>
+                        // Nếu index là số lẻ -> thêm class đảo chiều dòng
+                        $row_reverse_class = ($index % 2 !== 0) ? 'flex-lg-row-reverse' : '';
+                        ?>
+                        <div class="feature">
+                            <div class="row feature__row w-100 d-flex <?php echo esc_attr($row_reverse_class); ?>">
+                                <div class="col-lg-7">
+                                    <div class="feature__content d-flex <?php echo esc_attr($row_reverse_class); ?>">
+                                        <div class="feature__number">
+                                            <?php echo esc_html($number); ?>
                                         </div>
-                                    </div>
-                                    <?php if (!empty($image)): ?>
-                                        <div class="col-lg-5">
-                                            <div class="feature__image"> <img src="<?php echo esc_url($image['url']); ?>"
-                                                    alt="<?php echo esc_attr($image['alt'] ?? 'Ảnh minh họa'); ?>" />
-                                            </div>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                        <?php else: ?>
-                            <!-- Giao diện 2: Index lẻ (1, 3, 5, ...) -->
-                            <div class="feature">
-                                <div class="row feature__row">
-                                    <?php if (!empty($image)): ?>
-                                        <div class="col-lg-5">
-                                            <div class="feature__image"> <img src="<?php echo esc_url($image['url']); ?>"
-                                                    alt="<?php echo esc_attr($image['alt'] ?? 'Ảnh minh họa'); ?>" />
-                                            </div>
-                                        </div>
-                                    <?php endif; ?>
-                                    <div class="col-lg-7">
-                                        <div class="feature__content">
-                                            <div class="feature__text">
-                                                <?php if (!empty($title)): ?>
-                                                    <h3 class="feature__title"><?php echo esc_html($title); ?>
-                                                    </h3>
-                                                <?php endif; ?>
-                                                <?php if (!empty($content)): ?>
-                                                    <div class="feature__desc">
-                                                        <?php echo wp_kses_post($content); ?>
-                                                    </div>
-                                                <?php endif; ?>
-                                            </div>
-                                            <div class="feature__number">
-                                                <?php echo esc_html($number); ?>
-                                            </div>
+                                        <div class="feature__text">
+                                            <?php if (!empty($title)): ?>
+                                                <h3 class="feature__title"><?php echo esc_html($title); ?></h3>
+                                            <?php endif; ?>
+                                            <?php if (!empty($content)): ?>
+                                                <div class="feature__desc">
+                                                    <?php echo wp_kses_post($content); ?>
+                                                </div>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>
+                                <?php if (!empty($image)): ?>
+                                    <div class="col-lg-5">
+                                        <div class="feature__image">
+                                            <img src="<?php echo esc_url($image['url']); ?>"
+                                                alt="<?php echo esc_attr($image['alt'] ?? 'Ảnh minh họa'); ?>" />
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                        <?php endif; ?>
+                        </div>
                     <?php endforeach; ?>
                 </div>
             </div>
         </div>
     </section>
     <!-- why choose Us End -->
+
+    <!-- Contact Form -->
+    <section class="section__space">
+        <div class="contact_form__inner">
+            <div class="container">
+                <div class="row contact_form__row">
+                    <div class="col-lg-10">
+                        <div class="contact_form">
+                            <?php if (!empty($title_form)): ?>
+                                <h2 class="contact_form__title"><?php echo esc_html($title_form); ?></h2>
+                            <?php endif; ?>
+
+                            <?php if (!empty($content_form)): ?>
+                                <div class="contact_form__desc editor"><?php echo wp_kses_post($content_form); ?></div>
+                            <?php endif; ?>
+
+                            <!-- Form -->
+                            <?php if (!empty($contact_form)): ?>
+                                <?php echo do_shortcode('[contact-form-7 id="' . esc_attr($contact_form) . '" html_class="form_contact"]'); ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Form End -->
 
     <!-- Project Start -->
     <?php
@@ -352,12 +349,12 @@ get_header();
         <div class="container">
             <div class="project">
                 <?php if (!empty($title_project)): ?>
-                    <h2 class="project__heading"><?php the_title(); ?>
+                    <h2 class="project__heading"><?php echo $title_project; ?>
                     </h2>
                 <?php endif; ?>
 
                 <?php if ($query->have_posts()): ?>
-                    <div class="row">
+                    <div class="row project__row">
                         <?php while ($query->have_posts()):
                             $query->the_post(); ?>
                             <?php
@@ -426,9 +423,9 @@ get_header();
 
     <?php if (!empty($reviews_list)): ?>
         <section class="section__space">
-            <div class="reviews">
-                <div class="container">
-                    <div class="row"> <?php foreach ($reviews_list as $item):
+            <div class="container">
+                <div class="reviews">
+                    <div class="row reviews__row"> <?php foreach ($reviews_list as $item):
                         $avatar = isset($item['avatar']) && is_array($item['avatar']) ? $item['avatar']['url'] ?? '' : '';
                         $alt = isset($item['avatar']['alt']) ? $item['avatar']['alt'] : '';
                         $title = isset($item['title']) ? $item['title'] : '';
@@ -464,7 +461,32 @@ get_header();
     <?php endif; ?>
     <!-- Reviews End -->
 
-    <!--  -->
+    <!-- Contact Form -->
+    <section class="section__space">
+        <div class="contact_form__inner">
+            <div class="container">
+                <div class="row contact_form__row">
+                    <div class="col-lg-10">
+                        <div class="contact_form">
+                            <?php if (!empty($title_form)): ?>
+                                <h2 class="contact_form__title"><?php echo esc_html($title_form); ?></h2>
+                            <?php endif; ?>
+
+                            <?php if (!empty($content_form)): ?>
+                                <div class="contact_form__desc editor"><?php echo wp_kses_post($content_form); ?></div>
+                            <?php endif; ?>
+
+                            <!-- Form -->
+                            <?php if (!empty($contact_form)): ?>
+                                <?php echo do_shortcode('[contact-form-7 id="' . esc_attr($contact_form) . '" html_class="form_contact"]'); ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Form End -->
 </div>
 
 <?php

@@ -199,7 +199,7 @@
 			.form_contact__row {
 				display: block;
 
-				@media (min-width: 1200px) {
+				@media (min-width: 1100px) {
 					display: flex;
 					flex-wrap: wrap;
 					gap: 12px;
@@ -210,7 +210,7 @@
 			.form_contact__col {
 				margin-bottom: 12px;
 
-				@media (min-width: 1200px) {
+				@media (min-width: 1100px) {
 					flex: 1 1 0;
 					min-width: 180px; // hoặc tùy theo thiết kế
 				}
@@ -315,11 +315,11 @@
 
 	/* Problem */
 	.support_problem {
-		padding: 30px;
+		padding: 30px 0px;
 
-		.problem__row {
-			row-gap: 24px;
-		}
+		// .problem__row {
+		// 	row-gap: 24px;
+		// }
 
 		.problem__title {
 			position: relative;
@@ -481,7 +481,7 @@
 			rgba(188, 26, 26, 1) 0%,
 			rgba(149, 34, 89, 1) 100%
 		);
-		padding: 30px;
+		padding: 30px 0px;
 
 		.service__title {
 			//
@@ -597,7 +597,7 @@
 	/* User */
 	.support_users {
 		//
-		padding: 30px;
+		padding: 30px 0px;
 
 		//
 		margin-bottom: 24px;
@@ -608,7 +608,7 @@
 			font-weight: 800;
 
 			//
-			color: #000000;
+			color: #d10000;
 
 			//
 			padding: 0px;
@@ -912,7 +912,7 @@
 			font-size: 28px;
 			font-weight: 800;
 			//
-			color: #000000;
+			color: #d10000;
 			//
 			margin-top: 0px;
 			margin-bottom: 24px;
@@ -945,7 +945,7 @@
 			font-size: 30px;
 			font-weight: 900;
 			//
-			color: #000000;
+			color: #ffffff;
 			//
 			margin-top: 0px;
 			margin-bottom: 24px;
@@ -977,10 +977,15 @@
 			//
 			color: #000000;
 			//
+			white-space: inherit;
 		}
 
 		.accordion-button:focus {
 			box-shadow: none;
+		}
+
+		.accordion-button:hover {
+			background-color: transparent;
 		}
 
 		.accordion-button:not(.collapsed) {
@@ -1000,15 +1005,18 @@
 
 	/* ======================================== */
 	.support_customers {
-		padding: 60px 0;
+		padding: 30px 0px;
+
+		.customers__title {
+			font-size: 28px;
+			font-weight: 700;
+			//
+			color: #d10000;
+			//
+			margin-bottom: 40px;
+		}
 
 		.customers {
-			&__title {
-				font-size: 28px;
-				font-weight: 700;
-				margin-bottom: 40px;
-			}
-
 			&__grid {
 				margin-left: -15px;
 				margin-right: -15px;

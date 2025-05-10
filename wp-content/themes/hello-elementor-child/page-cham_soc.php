@@ -15,7 +15,11 @@
 
 get_header();
 ?>
-
+<style>
+    .row {
+        row-gap: 24px;
+    }
+</style>
 <!--  -->
 <div class="support_page">
     <!-- Banner Start -->
@@ -555,4 +559,4 @@ get_header();
 get_footer();
 ?>
 <link rel="stylesheet" href="<?php echo CHILD_URI ?>/assets/inc/bootstrap/bootstrap.min.css">
-<script src="<?php echo CHILD_URI ?>/assets/inc/bootstrap/bootstrap.min.js"></script>
+<script src="<?php echo CHILD_URI ?>/assets/inc/bootstrap/bootstrap.bundle.min.js"></script>

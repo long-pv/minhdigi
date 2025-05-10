@@ -13,7 +13,11 @@
 */
 
 .section__space {
-	padding: 30px 0px;
+	padding: 20px 0px;
+
+	@media (min-width: 1100px) {
+		padding: 30px 0px;
+	}
 }
 
 /* ========================================= */
@@ -48,6 +52,7 @@
 			// Font (Phông chữ)
 			font-weight: 700;
 			font-size: 27px;
+			line-height: 1.4;
 
 			// Color (Màu sắc)
 			color: #e5e7eb;
@@ -66,7 +71,7 @@
 
 			// Margin
 			margin-left: 0px;
-			margin-bottom: 12px;
+			margin-bottom: 16px;
 
 			.list__item {
 				display: flex;
@@ -74,7 +79,11 @@
 				// align-items: center;
 				gap: 8px;
 				//
-				margin-bottom: 12px;
+				margin-bottom: 8px;
+
+				@media (min-width: 1100px) {
+					margin-bottom: 12px;
+				}
 
 				&:last-child {
 					margin-bottom: 0px;
@@ -141,15 +150,31 @@
 	/* ======================================== */
 
 	/* Contact Form */
+	.contact_form__inner {
+		background: linear-gradient(
+			180deg,
+			rgba(232, 27, 32, 1) 0%,
+			rgba(0, 0, 0, 1) 100%
+		);
+
+		//
+		padding: 30px 0px;
+	}
+
 	.contact_form__row {
 		justify-content: center;
 	}
 
 	.contact_form {
+		background-color: #ffffff;
 		border-radius: 25px;
 		border: 1px solid #8d93ab;
-		padding: 10px 30px 30px;
+		padding: 16px;
 		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+		@media (min-width: 1100px) {
+			padding: 30px;
+		}
 
 		.contact_form__title {
 			font-size: 25px;
@@ -182,15 +207,23 @@
 			}
 
 			&__row {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 12px;
-				align-items: stretch;
+				display: block;
+
+				@media (min-width: 1100px) {
+					display: flex;
+					flex-wrap: wrap;
+					gap: 12px;
+					align-items: stretch;
+				}
 			}
 
 			&__col {
-				flex: 1 1 0;
-				min-width: 180px; // hoặc tùy theo thiết kế
+				margin-bottom: 12px;
+
+				@media (min-width: 1100px) {
+					flex: 1 1 0;
+					min-width: 180px; // hoặc tùy theo thiết kế
+				}
 			}
 
 			&__button-wrapper {
@@ -223,6 +256,7 @@
 
 			.form_contact__button-wrapper {
 				position: relative;
+				justify-content: center;
 
 				.form_contact__button {
 					position: relative;
@@ -241,44 +275,6 @@
 			}
 		}
 
-		// Form
-		// .form_contact {
-		// 	display: flex;
-		// 	gap: 24px;
-		// 	align-items: center;
-		// 	flex-wrap: wrap;
-		// }
-
-		// .form_contact__input {
-		// 	flex: 1;
-		// 	min-width: 205px;
-		// 	padding: 8px;
-		// 	//
-		// 	border: 1px solid #d9d9d9;
-		// 	border-radius: 6px;
-		// 	//
-
-		// 	font-size: 16px;
-
-		// 	&::placeholder {
-		// 		font-size: 13px;
-		// 		color: #979797;
-		// 	}
-		// }
-
-		// .form_contact__button {
-		// 	background-color: #f39f1e;
-		// 	padding: 8px 24px;
-		// 	border: none;
-		// 	border-radius: 6px;
-		// 	//
-		// 	font-size: 14px;
-		// 	font-weight: 700;
-		// 	text-transform: uppercase;
-		// 	//
-		// 	color: #ffffff;
-		// }
-
 		.form_contact__button:hover {
 			background-color: #e0911e; /* Màu đậm hơn khi hover */
 		}
@@ -292,12 +288,16 @@
 
 	/* Learn */
 	.learn {
-		padding: 30px;
+		padding: 30px 0px;
+
+		.learn__row {
+			row-gap: 24px;
+		}
 
 		.learn__title {
 			position: relative;
 			display: inline-block;
-			margin-bottom: 20px;
+			margin-bottom: 24px;
 		}
 
 		.title__content {
@@ -344,7 +344,7 @@
 		}
 
 		.learn__desc {
-			margin-bottom: 16px;
+			margin-bottom: 24px;
 		}
 
 		.learn__desc ul {
@@ -413,7 +413,10 @@
 			rgba(188, 26, 26, 1) 0%,
 			rgba(149, 34, 89, 1) 100%
 		);
-		padding: 30px;
+		padding: 30px 0px;
+		.customer__row {
+			row-gap: 16px;
+		}
 
 		.customer__title {
 			font-size: 30px;
@@ -467,7 +470,8 @@
 			.audience__list {
 				ul {
 					list-style: none;
-					padding: 0;
+					padding: 0px;
+					margin: 0px;
 
 					li {
 						position: relative;
@@ -481,12 +485,15 @@
 					}
 
 					li::before {
-						content: "🕒"; /* Hoặc 👉 tuỳ mục */
+						content: "";
 						position: absolute;
 						left: 0;
-						top: 0;
-						font-size: 20px;
-						line-height: 1;
+						top: 4px;
+						width: 18px;
+						height: 18px;
+						background-image: url("data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSdub25lJyAgd2lkdGg9JzUwMCcgaGVpZ2h0PSc0MDQnIHZpZXdCb3g9JzAgMCA1MDAgNDA0JyBmaWxsPSdub25lJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxwYXRoIGQ9J00yNzcuOCAwSDI3MC45SDIyMi4ySDBMMjIyLjIgMjAxLjlMMCA0MDMuN0gyMjIuMkgyNzAuOUgyNzcuOEw1MDAgMjAxLjlMMjc3LjggMFonIGZpbGw9JyM5MTkxOTEnLz48L3N2Zz4=");
+						background-repeat: no-repeat;
+						background-size: contain;
 					}
 
 					li:last-child {
@@ -505,6 +512,8 @@
 
 	/* Why choose Us */
 	.why_choose_us {
+		padding: 30px 0px;
+
 		.why_choose_us__inner {
 			display: flex;
 			align-items: center;
@@ -534,29 +543,54 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			gap: 40px;
-			padding: 40px 0;
+			margin-bottom: 24px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 
 		.feature__row {
+			display: flex;
+			flex-wrap: wrap;
 			align-items: center;
+			row-gap: 16px;
+			// flex-direction: column-reverse; /* Mặc định mobile/tablet: dọc theo cột */
+
+			@media (min-width: 1100px) {
+				flex-direction: row; /* Trên desktop, chiều ngang */
+			}
 		}
 
 		.feature__content {
-			flex: 1;
 			display: flex;
-			align-items: flex-start;
-			gap: 20px;
+			flex-direction: column;
+			align-items: center;
+			gap: 16px;
+			width: 100%;
+
+			@media (min-width: 1100px) {
+				flex-direction: row;
+				align-items: flex-start;
+				gap: 20px;
+			}
 		}
 
 		.feature__number {
 			font-size: 64px;
 			font-weight: bold;
-			color: #f39f1e; /* Màu cam theo mẫu */
+			color: #f39f1e;
 			flex-shrink: 0;
+			order: 1;
+			text-align: center;
+
+			@media (min-width: 1100px) {
+				text-align: left;
+			}
 		}
 
 		.feature__text {
+			order: 2;
 			flex: 1;
 		}
 
@@ -564,36 +598,54 @@
 			font-size: 20px;
 			font-weight: bold;
 			color: #f39f1e;
-			//
 			margin-bottom: 16px;
 		}
 
-		.feature__list {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-		}
+		.feature__desc {
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
 
-		.feature__item {
-			position: relative;
-			padding-left: 24px;
-			margin-bottom: 12px;
-			font-size: 16px;
-			line-height: 1.5;
-		}
+				li {
+					position: relative;
+					padding-left: 30px;
+					margin-bottom: 16px;
+					color: #000;
+					font-size: 16px;
+					font-weight: 400;
+					text-align: justify;
+				}
 
-		.feature__item::before {
-			content: "✔️";
-			position: absolute;
-			left: 0;
-			top: 2px;
-			font-size: 16px;
-			color: #2ca089; /* Màu mũi tên xanh */
+				li::before {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 4px;
+					width: 18px;
+					height: 18px;
+					background-image: url("data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSdub25lJyAgd2lkdGg9JzUwMCcgaGVpZ2h0PSc0MDQnIHZpZXdCb3g9JzAgMCA1MDAgNDA0JyBmaWxsPSdub25lJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxwYXRoIGQ9J00yNzcuOCAwSDI3MC45SDIyMi4ySDBMMjIyLjIgMjAxLjlMMCA0MDMuN0gyMjIuMkgyNzAuOUgyNzcuOEw1MDAgMjAxLjlMMjc3LjggMFonIGZpbGw9JyM5MTkxOTEnLz48L3N2Zz4=");
+					background-repeat: no-repeat;
+					background-size: contain;
+				}
+
+				li:last-child {
+					margin-bottom: 0;
+				}
+			}
 		}
 
 		.feature__image {
-			flex: 1;
-			text-align: right;
+			order: 3;
+			width: 100%;
+			text-align: center;
+
+			@media (min-width: 1100px) {
+				order: unset;
+				text-align: right;
+				width: auto;
+				flex: 1;
+			}
 		}
 
 		.feature__image img {
@@ -604,11 +656,18 @@
 
 	/* ========================================= */
 
-	/*          Why choose Us CSS        */
+	/*          Project CSS        */
 
 	/* ======================================== */
 
 	/* Project */
+	.project {
+		padding: 30px 0px;
+	}
+	.project__row {
+		row-gap: 16px;
+	}
+
 	.project__heading {
 		font-size: 28px;
 		font-weight: 800;
@@ -714,9 +773,11 @@
 
 	/* Reviews */
 	.reviews {
-		text-align: center;
-		padding: 24px;
-		font-family: "Arial", sans-serif;
+		padding: 30px 0px;
+	}
+
+	.reviews__row {
+		row-gap: 16px;
 	}
 
 	.reviews__item {

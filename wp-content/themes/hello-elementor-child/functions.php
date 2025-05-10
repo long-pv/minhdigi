@@ -3,7 +3,7 @@ define('CHILD_URI', get_stylesheet_directory_uri());
 define('CHILD_PATH', get_stylesheet_directory());
 define('TEMPLATE_PATH', CHILD_PATH . '/elementor-widgets/template/');
 if (!defined('_S_VERSION')) {
-    define('_S_VERSION', '1.0.19');
+    define('_S_VERSION', '1.0.30');
 }
 
 // turn off auto update core wp

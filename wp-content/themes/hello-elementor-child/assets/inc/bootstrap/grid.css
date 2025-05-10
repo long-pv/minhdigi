@@ -22,10 +22,10 @@
 	.container,
 	.container-sm {
 		max-width: 100%;
-		--bs-gutter-x: 40px;
+		--bs-gutter-x: 20px;
 	}
 }
-
+	 				 
 @media (min-width: 768px) {
 	.container,
 	.container-md,
