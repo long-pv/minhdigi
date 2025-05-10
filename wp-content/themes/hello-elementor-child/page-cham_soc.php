@@ -553,3 +553,6 @@ get_header();
 </div>
 <?php
 get_footer();
+?>
+<link rel="stylesheet" href="<?php echo CHILD_URI ?>/assets/inc/bootstrap/bootstrap.min.css">
+<script src="<?php echo CHILD_URI ?>/assets/inc/bootstrap/bootstrap.min.js"></script>
