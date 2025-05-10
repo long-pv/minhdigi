@@ -1,0 +1,772 @@
+/**
+
+ TABLE OF CONTENT
+                                         
+  1. Banner
+  2. Contact Form
+  3. Learn
+  4. Customer
+  5. Why choose Us
+  6. Project
+  7. Reviews
+
+*/
+
+.section__space {
+	padding: 30px 0px;
+}
+
+/* ========================================= */
+
+/*          Banner CSS        */
+
+/* ======================================== */
+
+.about_page {
+	/* Banner */
+	.banner {
+		// Background (Nền)
+		background: linear-gradient(
+			180deg,
+			rgba(232, 27, 32, 1) 0%,
+			rgba(0, 0, 0, 1) 100%
+		);
+
+		// Padding (Khoảng cách)
+		padding: 30px 0px;
+
+		.banner__inner {
+			// Margin
+			row-gap: 24px;
+
+			@media (min-width: 1100px) {
+				row-gap: 0px;
+			}
+		}
+
+		.banner__title {
+			// Font (Phông chữ)
+			font-weight: 700;
+			font-size: 27px;
+
+			// Color (Màu sắc)
+			color: #e5e7eb;
+
+			// Margin (Khoảng cách)
+			margin-top: 0px;
+			margin-bottom: 16px;
+		}
+
+		.banner__list {
+			// Kiểu danh sách
+			list-style: none;
+
+			// Padding
+			padding: 0px;
+
+			// Margin
+			margin-left: 0px;
+			margin-bottom: 12px;
+
+			.list__item {
+				display: flex;
+				justify-content: start;
+				// align-items: center;
+				gap: 8px;
+				//
+				margin-bottom: 12px;
+
+				&:last-child {
+					margin-bottom: 0px;
+				}
+
+				.list__icon {
+					// Kích thước
+					width: 18px;
+					height: 18px;
+					min-width: 18px;
+				}
+
+				.list__desc {
+					// Font
+					font-weight: 400;
+					font-size: 14px;
+
+					// Color
+					color: #e5e7eb;
+				}
+			}
+		}
+
+		.banner__button {
+			// Display
+			display: inline-block;
+
+			// Background
+			background-color: #dc2727;
+
+			// Border
+			border-radius: 16px;
+
+			// Padding
+			padding: 10px 30px;
+
+			&--text {
+				// Font
+				font-size: 14px;
+				font-weight: 700;
+
+				// Text
+				text-transform: uppercase;
+				text-decoration: none;
+
+				// Color
+				color: #f7f3f3;
+			}
+		}
+
+		.banner__wrapper {
+			.banner__img {
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+			}
+		}
+	}
+
+	/* ========================================= */
+
+	/*          Contact Form CSS        */
+
+	/* ======================================== */
+
+	/* Contact Form */
+	.contact_form__row {
+		justify-content: center;
+	}
+
+	.contact_form {
+		border-radius: 25px;
+		border: 1px solid #8d93ab;
+		padding: 10px 30px 30px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+		.contact_form__title {
+			font-size: 25px;
+			font-weight: 700;
+			text-align: center;
+			text-transform: uppercase;
+			//
+			color: #c90a0a;
+			//
+			margin-top: 0px;
+			margin-bottom: 16px;
+		}
+
+		.contact_form__desc {
+			font-size: 16px;
+			font-weight: 400;
+			text-align: center;
+			//
+			color: #000000;
+			//
+			margin-bottom: 16px;
+		}
+
+		// Form 1
+		.form_contact {
+			width: 100%;
+
+			p {
+				margin-bottom: 0px;
+			}
+
+			&__row {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 12px;
+				align-items: stretch;
+			}
+
+			&__col {
+				flex: 1 1 0;
+				min-width: 180px; // hoặc tùy theo thiết kế
+			}
+
+			&__button-wrapper {
+				flex-shrink: 0;
+				display: flex;
+				align-items: center;
+			}
+
+			&__input {
+				width: 100%;
+				padding: 10px 12px;
+				border: 1px solid #ccc;
+				border-radius: 6px;
+			}
+
+			&__button {
+				padding: 10px 24px;
+				white-space: nowrap;
+				background-color: #0073aa;
+				color: #fff;
+				border: none;
+				border-radius: 6px;
+				cursor: pointer;
+				transition: background 0.3s;
+
+				&:hover {
+					background-color: #005a8c;
+				}
+			}
+
+			.form_contact__button-wrapper {
+				position: relative;
+
+				.form_contact__button {
+					position: relative;
+					// padding-right: 40px; // chừa chỗ cho spinner nếu cần
+				}
+
+				.wpcf7-spinner {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					margin: 0; // xóa margin mặc định nếu có
+					pointer-events: none;
+					z-index: 1;
+				}
+			}
+		}
+
+		// Form
+		// .form_contact {
+		// 	display: flex;
+		// 	gap: 24px;
+		// 	align-items: center;
+		// 	flex-wrap: wrap;
+		// }
+
+		// .form_contact__input {
+		// 	flex: 1;
+		// 	min-width: 205px;
+		// 	padding: 8px;
+		// 	//
+		// 	border: 1px solid #d9d9d9;
+		// 	border-radius: 6px;
+		// 	//
+
+		// 	font-size: 16px;
+
+		// 	&::placeholder {
+		// 		font-size: 13px;
+		// 		color: #979797;
+		// 	}
+		// }
+
+		// .form_contact__button {
+		// 	background-color: #f39f1e;
+		// 	padding: 8px 24px;
+		// 	border: none;
+		// 	border-radius: 6px;
+		// 	//
+		// 	font-size: 14px;
+		// 	font-weight: 700;
+		// 	text-transform: uppercase;
+		// 	//
+		// 	color: #ffffff;
+		// }
+
+		.form_contact__button:hover {
+			background-color: #e0911e; /* Màu đậm hơn khi hover */
+		}
+	}
+
+	/* ========================================= */
+
+	/*          Learn CSS        */
+
+	/* ======================================== */
+
+	/* Learn */
+	.learn {
+		padding: 30px;
+
+		.learn__title {
+			position: relative;
+			display: inline-block;
+			margin-bottom: 20px;
+		}
+
+		.title__content {
+			display: flex;
+			align-items: center;
+		}
+
+		.title__icon {
+			width: 24px;
+			height: 24px;
+			max-width: 24px;
+			//
+			margin-right: 8px;
+		}
+
+		.title__text {
+			font-size: 24px;
+			font-weight: bold;
+			color: #d10000; /* Màu đỏ */
+
+			//
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+
+		.learn__title::after {
+			content: "";
+			display: block;
+			// width: 100%;
+			width: 272px;
+			height: 2px;
+			background-color: #333; /* Màu line */
+			margin-top: 8px;
+		}
+
+		.learn__title {
+			font-weight: 700;
+			font-size: 27px;
+			//
+			color: #e5e7eb;
+			//
+			margin-top: 0px;
+			margin-bottom: 16px;
+		}
+
+		.learn__desc {
+			margin-bottom: 16px;
+		}
+
+		.learn__desc ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.learn__desc ul li {
+			position: relative;
+			padding-left: 28px;
+			margin-bottom: 12px;
+		}
+
+		.learn__desc ul li:last-child {
+			margin-bottom: 0px;
+		}
+
+		.learn__desc ul li::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 4px;
+			width: 18px;
+			height: 18px;
+			background-image: url("data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSdub25lJyAgd2lkdGg9JzUwMCcgaGVpZ2h0PSc0MDQnIHZpZXdCb3g9JzAgMCA1MDAgNDA0JyBmaWxsPSdub25lJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxwYXRoIGQ9J00yNzcuOCAwSDI3MC45SDIyMi4ySDBMMjIyLjIgMjAxLjlMMCA0MDMuN0gyMjIuMkgyNzAuOUgyNzcuOEw1MDAgMjAxLjlMMjc3LjggMFonIGZpbGw9JyM5MTkxOTEnLz48L3N2Zz4=");
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		.learn__button {
+			display: inline-block;
+			padding: 10px 50px;
+			border-radius: 16px;
+			background-color: #f39f1e;
+			//
+			&--text {
+				font-size: 14px;
+				font-weight: 700;
+				text-transform: uppercase;
+				text-decoration: none;
+				//
+				color: #ffffff;
+			}
+		}
+
+		.learn__wrapper {
+			.learn__img {
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+			}
+		}
+	}
+
+	/* ========================================= */
+
+	/*          Customer CSS        */
+
+	/* ======================================== */
+
+	/* Customer */
+	.customer {
+		background: linear-gradient(
+			180deg,
+			rgba(188, 26, 26, 1) 0%,
+			rgba(149, 34, 89, 1) 100%
+		);
+		padding: 30px;
+
+		.customer__title {
+			font-size: 30px;
+			font-weight: 900;
+			text-align: center;
+			//
+			color: #ffffff;
+			//
+			margin-top: 0px;
+			margin-bottom: 24px;
+		}
+
+		.audience {
+			.audience__img {
+				display: flex;
+				width: 100%;
+				height: 0px;
+				padding-bottom: 66.4%;
+				border-radius: 18px;
+				overflow: hidden;
+				//
+				position: relative;
+				//
+				margin-bottom: 12px;
+
+				img {
+					position: absolute;
+					top: 0px;
+					left: 0px;
+					//
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.audience__position {
+				background-color: #f39f1e;
+				padding: 10px;
+				//
+				margin-bottom: 16px;
+
+				//
+				font-size: 18px;
+				font-weight: 700;
+				text-align: center;
+				//
+				color: #ffffff;
+			}
+
+			.audience__list {
+				ul {
+					list-style: none;
+					padding: 0;
+
+					li {
+						position: relative;
+						padding-left: 30px; /* chừa chỗ cho icon */
+						margin-bottom: 16px;
+						//
+						color: #ffffff;
+						font-size: 16px;
+						font-weight: 400;
+						text-align: justify;
+					}
+
+					li::before {
+						content: "🕒"; /* Hoặc 👉 tuỳ mục */
+						position: absolute;
+						left: 0;
+						top: 0;
+						font-size: 20px;
+						line-height: 1;
+					}
+
+					li:last-child {
+						margin-bottom: 0px;
+					}
+				}
+			}
+		}
+	}
+
+	/* ========================================= */
+
+	/*          Why choose Us CSS        */
+
+	/* ======================================== */
+
+	/* Why choose Us */
+	.why_choose_us {
+		.why_choose_us__inner {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			//
+			margin-bottom: 24px;
+		}
+
+		.why_choose_us__icon {
+			width: 24px;
+			height: 24px;
+			min-width: 24px;
+		}
+
+		.why_choose_us__title {
+			font-size: 28px;
+			font-weight: 800;
+			text-align: left;
+			//
+			color: #c90a0a;
+			//
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+
+		.feature {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 40px;
+			padding: 40px 0;
+		}
+
+		.feature__row {
+			align-items: center;
+		}
+
+		.feature__content {
+			flex: 1;
+			display: flex;
+			align-items: flex-start;
+			gap: 20px;
+		}
+
+		.feature__number {
+			font-size: 64px;
+			font-weight: bold;
+			color: #f39f1e; /* Màu cam theo mẫu */
+			flex-shrink: 0;
+		}
+
+		.feature__text {
+			flex: 1;
+		}
+
+		.feature__title {
+			font-size: 20px;
+			font-weight: bold;
+			color: #f39f1e;
+			//
+			margin-bottom: 16px;
+		}
+
+		.feature__list {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.feature__item {
+			position: relative;
+			padding-left: 24px;
+			margin-bottom: 12px;
+			font-size: 16px;
+			line-height: 1.5;
+		}
+
+		.feature__item::before {
+			content: "✔️";
+			position: absolute;
+			left: 0;
+			top: 2px;
+			font-size: 16px;
+			color: #2ca089; /* Màu mũi tên xanh */
+		}
+
+		.feature__image {
+			flex: 1;
+			text-align: right;
+		}
+
+		.feature__image img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	/* ========================================= */
+
+	/*          Why choose Us CSS        */
+
+	/* ======================================== */
+
+	/* Project */
+	.project__heading {
+		font-size: 28px;
+		font-weight: 800;
+		text-align: center;
+		//
+		color: #c90a0a;
+		//
+		margin-top: 0px;
+		margin-bottom: 24px;
+	}
+
+	.project__item {
+		background: #ffffff;
+		border-radius: 12px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+		overflow: hidden;
+	}
+
+	.project__wrapper {
+		display: flex;
+		position: relative;
+		width: 100%;
+		height: 0px;
+		padding-bottom: 46.7%;
+	}
+
+	.project__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.project__content {
+		padding: 16px;
+		text-align: center;
+	}
+
+	.project__title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+		//
+		gap: 8px;
+		margin-bottom: 16px;
+	}
+
+	.project__icon {
+		width: 24px;
+		height: 24px;
+		min-width: 24px;
+	}
+
+	.project__text {
+		font-weight: 700;
+		font-size: 16px;
+		//
+		color: #f39f1e;
+		//
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	.project__stats {
+	}
+
+	.project__stat {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.stat__info {
+			.stat__value {
+				font-weight: 700;
+				font-size: 18px;
+				//
+				color: #000000;
+			}
+
+			.stat__icon {
+				width: 24px;
+				height: 24px;
+				min-width: 24px;
+			}
+		}
+
+		.stat__label {
+			font-weight: 400;
+			font-size: 14px;
+			//
+			color: #000000;
+		}
+	}
+
+	/* ========================================= */
+
+	/*          Reviews CSS        */
+
+	/* ======================================== */
+
+	/* Reviews */
+	.reviews {
+		text-align: center;
+		padding: 24px;
+		font-family: "Arial", sans-serif;
+	}
+
+	.reviews__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.reviews__avatar {
+		display: flex;
+		width: 125px;
+		height: 125px;
+		justify-content: center;
+		margin-bottom: 16px;
+	}
+
+	.reviews__avatar--wrapper {
+		position: relative;
+		width: 100%;
+		height: 0px;
+		padding-bottom: 100%;
+		overflow: hidden;
+	}
+
+	.reviews__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		//
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.reviews__name {
+		font-weight: 500;
+		font-size: 16px;
+		text-align: center;
+		//
+		color: #000000;
+		//
+		margin-bottom: 16px;
+	}
+
+	.reviews__content {
+		padding: 16px 24px;
+		border: 1px solid #8d93ab;
+		border-radius: 6px;
+		//
+		font-size: 14px;
+		color: #000000;
+	}
+}
