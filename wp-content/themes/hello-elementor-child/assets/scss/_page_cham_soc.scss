@@ -199,7 +199,7 @@
 			.form_contact__row {
 				display: block;
 
-				@include media-breakpoint-up(lg) {
+				@media (min-width: 1200px) {
 					display: flex;
 					flex-wrap: wrap;
 					gap: 12px;
@@ -210,7 +210,7 @@
 			.form_contact__col {
 				margin-bottom: 12px;
 
-				@include media-breakpoint-up(lg) {
+				@media (min-width: 1200px) {
 					flex: 1 1 0;
 					min-width: 180px; // hoặc tùy theo thiết kế
 				}

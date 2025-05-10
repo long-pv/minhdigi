@@ -91,6 +91,8 @@ require CHILD_PATH . '/inc/ajax.php';
 require CHILD_PATH . '/inc/custom_theme.php';
 // vudevelop.php
 require CHILD_PATH . '/inc/vudevelop.php';
+// cpt_custom
+require CHILD_PATH . '/inc/cpt_custom.php';
 
 // load widgets library
 function load_custom_widgets()

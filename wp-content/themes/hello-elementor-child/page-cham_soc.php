@@ -18,7 +18,6 @@ get_header();
 
 <!--  -->
 <div class="support_page">
-
 	<!-- Banner Start -->
 	<?php
 	$banner_data = get_field('banner') ?? '';

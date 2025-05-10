@@ -18,7 +18,6 @@ get_header();
 
 <!--  -->
 <div class="about_page">
-
     <!-- Banner Start -->
     <?php
     $banner = get_field('banner') ?? '';
@@ -353,63 +352,53 @@ get_header();
         <div class="container">
             <div class="project">
                 <?php if (!empty($title_project)): ?>
-                    <h2 class="project__heading"><?php echo $title_project; ?>
+                    <h2 class="project__heading"><?php the_title(); ?>
                     </h2>
                 <?php endif; ?>
 
-
                 <?php if ($query->have_posts()): ?>
-                    <div class="row"> <?php while ($query->have_posts()):
-                        $query->the_post(); ?>
+                    <div class="row">
+                        <?php while ($query->have_posts()):
+                            $query->the_post(); ?>
                             <?php
-                            $image = get_field('image'); // ACF field ảnh
-                            $icon = get_field('icon') ?? '🎯'; // ACF icon hoặc mặc định
+                            $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                             $stat_1 = get_field('stat_1') ?? ['value' => '', 'label' => ''];
                             $stat_2 = get_field('stat_2') ?? ['value' => '', 'label' => ''];
                             ?>
                             <div class="col-lg-4">
-                                <div class="project__item"> <a href="<?php the_permalink(); ?>" class="project__wrapper">
-                                        <?php if (!empty($image['url'])): ?>
-                                            <img src="<?php echo esc_url($image['url']); ?>"
-                                                alt="<?php echo esc_attr($image['alt'] ?? get_the_title()); ?>"
-                                                class="project__image" />
+                                <div class="project__item">
+                                    <a href="<?php the_permalink(); ?>" class="project__wrapper">
+                                        <?php if (!empty($image_url)): ?>
+                                            <img src="<?php echo esc_url($image_url); ?>"
+                                                alt="<?php echo esc_attr(get_the_title()); ?>" class="project__image" />
                                         <?php endif; ?>
                                     </a>
-                                    <div class="project__content"> <a href="<?php the_permalink(); ?>" class="project__title">
-                                            <i class="project__icon"><?php echo esc_html($icon); ?></i>
-                                            <h3 class="project__text">
-                                                <?php the_title(); ?>
-                                            </h3>
+                                    <div class="project__content">
+                                        <a href="<?php the_permalink(); ?>" class="project__title">
+                                            <h3 class="project__text"><?php the_title(); ?></h3>
                                         </a>
                                         <div class="project__stats row">
                                             <?php if (!empty($stat_1['value'])): ?>
                                                 <div class="col-6">
                                                     <div class="project__stat">
                                                         <div class="stat__info">
-                                                            <span class="stat__value">
-                                                                <?php echo esc_html($stat_1['value']); ?>
-                                                            </span>
+                                                            <span
+                                                                class="stat__value"><?php echo esc_html($stat_1['value']); ?></span>
                                                             <span class="stat__icon">▲</span>
                                                         </div>
-                                                        <span class="stat__label">
-                                                            <?php echo esc_html($stat_1['label']); ?>
-                                                        </span>
+                                                        <span class="stat__label"><?php echo esc_html($stat_1['label']); ?></span>
                                                     </div>
                                                 </div>
                                             <?php endif; ?>
-
                                             <?php if (!empty($stat_2['value'])): ?>
                                                 <div class="col-6">
                                                     <div class="project__stat">
                                                         <div class="stat__info">
-                                                            <span class="stat__value">
-                                                                <?php echo esc_html($stat_2['value']); ?>
-                                                            </span>
+                                                            <span
+                                                                class="stat__value"><?php echo esc_html($stat_2['value']); ?></span>
                                                             <span class="stat__icon">▲</span>
                                                         </div>
-                                                        <span class="stat__label">
-                                                            <?php echo esc_html($stat_2['label']); ?>
-                                                        </span>
+                                                        <span class="stat__label"><?php echo esc_html($stat_2['label']); ?></span>
                                                     </div>
                                                 </div>
                                             <?php endif; ?>
@@ -418,9 +407,10 @@ get_header();
                                 </div>
                             </div>
                         <?php endwhile;
-                    wp_reset_postdata(); ?>
+                        wp_reset_postdata(); ?>
                     </div>
                 <?php endif; ?>
+
             </div>
         </div>
     </section>
