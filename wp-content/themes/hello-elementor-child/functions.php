@@ -80,12 +80,12 @@ function disable_plugins_update($value)
     if (isset($value->response['advanced-custom-fields-pro/acf.php'])) {
         unset($value->response['advanced-custom-fields-pro/acf.php']);
     }
-    if (isset($value->response['elementor/elementor.php'])) {
-        unset($value->response['elementor/elementor.php']);
-    }
-    if (isset($value->response['elementor-pro/elementor-pro.php'])) {
-        unset($value->response['elementor-pro/elementor-pro.php']);
-    }
+    // if (isset($value->response['elementor/elementor.php'])) {
+    //     unset($value->response['elementor/elementor.php']);
+    // }
+    // if (isset($value->response['elementor-pro/elementor-pro.php'])) {
+    //     unset($value->response['elementor-pro/elementor-pro.php']);
+    // }
     return $value;
 }
 
@@ -104,3 +104,15 @@ function load_custom_widgets()
     require CHILD_PATH . '/elementor-widgets/index.php';
 }
 add_action('elementor/init', 'load_custom_widgets');
+
+// thêm thương hiệu
+function xemer_theme_custom_admin_footer()
+{
+    echo 'Thanks for using WordPress. Powered by <a target="_blank" href="https://tramkienthuc.net/">Xemer Theme</a>.';
+}
+add_filter('admin_footer_text', 'xemer_theme_custom_admin_footer');
+
+// tối đa revision
+add_filter('wp_revisions_to_keep', function ($num, $post) {
+    return 3;
+}, 10, 2);

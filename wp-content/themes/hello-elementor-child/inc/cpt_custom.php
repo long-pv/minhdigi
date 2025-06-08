@@ -2,14 +2,14 @@
 function register_cpt_post_types()
 {
     $cpt_list = [
-        'project' => [
-            'labels' => __('Project', 'basetheme'),
-            'slug' => 'project',
-            'cap' => false,
-            'hierarchical' => false,
-            'position' => false,
-            'icon' => 'dashicons-portfolio'
-        ],
+        // 'project' => [
+        //     'labels' => __('Project', 'basetheme'),
+        //     'slug' => 'project',
+        //     'cap' => false,
+        //     'hierarchical' => false,
+        //     'position' => false,
+        //     'icon' => 'dashicons-portfolio'
+        // ],
     ];
 
     $cpt_tax = [
