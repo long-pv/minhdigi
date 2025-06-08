@@ -3,12 +3,16 @@ define('CHILD_URI', get_stylesheet_directory_uri());
 define('CHILD_PATH', get_stylesheet_directory());
 define('TEMPLATE_PATH', CHILD_PATH . '/elementor-widgets/template/');
 if (!defined('_S_VERSION')) {
-    define('_S_VERSION', '1.0.30');
+    define('_S_VERSION', '1.0.41');
 }
 
-// turn off auto update core wp
-define('AUTOMATIC_UPDATER_DISABLED', true);
-define('WP_AUTO_UPDATE_CORE', false);
+define('WP_AUTO_UPDATE_CORE', true); // Bật cập nhật tự động WordPress
+define('AUTOMATIC_UPDATER_DISABLED', false); // Đảm bảo cập nhật tự động không bị tắt
+define('WP_AUTO_UPDATE_PLUGINS', true); // Kích hoạt cập nhật tự động cho Plugin
+define('WP_AUTO_UPDATE_THEMES', true); // Kích hoạt cập nhật tự động cho Theme
+add_filter('auto_update_plugin', '__return_true'); // Tự động cập nhật plugin
+add_filter('auto_update_theme', '__return_true'); // Tự động cập nhật theme
+add_filter('auto_update_core', '__return_true'); // Tự động cập nhật WordPress core (cả bản lớn & nhỏ)
 
 /**
  * Enqueue scripts and styles.
